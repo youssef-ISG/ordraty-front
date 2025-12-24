@@ -1,0 +1,13 @@
+{
+  "login.title": "تسجيل الدخول إلى حسابك",
+  "login.description": "أدخل بريدك الإلكتروني وكلمة المرور للمتابعة",
+  "login.email_label": "البريد الإلكتروني",
+  "login.email_placeholder": "name@example.com",
+  "login.password_label": "كلمة المرور",
+  "login.password_placeholder": "أدخل كلمة المرور",
+  "login.create_account": "إنشاء حساب جديد",
+  "login.forgot_password": "نسيت كلمة المرور؟",
+  "login.submit_btn": "تسجيل الدخول",
+  "login.back_home": "العودة للصفحة الرئيسية",
+  "login.required_mark": "*"
+}

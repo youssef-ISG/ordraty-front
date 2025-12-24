@@ -1,0 +1,245 @@
+.profile_section {
+  background-color: #f0f2f5; /* رمادي أفتح */
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+/* --- Sidebar Styling --- */
+.profile-sidebar {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(17, 45, 78, 0.1);
+  overflow: hidden;
+  border: none;
+}
+
+.user-widget {
+  background: linear-gradient(135deg, var(--main-navy) 0%, #0a1c33 100%);
+  padding: 40px 20px;
+  text-align: center;
+  color: #fff;
+  position: relative;
+}
+
+/* تنسيق الصورة */
+.profile-img-container {
+  position: relative;
+  width: 110px;
+  height: 110px;
+  margin: 0 auto 15px;
+}
+
+.profile-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.edit-img-btn {
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  background-color: var(--main-red);
+  color: #fff;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 2px solid #fff;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+.edit-img-btn:hover {
+  background-color: #b91c1c;
+  transform: scale(1.1);
+}
+
+.user-widget h4 {
+  font-weight: 700;
+  margin-bottom: 5px;
+  color: #fff;
+}
+.user-widget p {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin: 0;
+}
+
+/* القائمة الجانبية */
+.menu-link {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  color: #555;
+  font-weight: 600;
+  transition: all 0.3s;
+  border-left: 4px solid transparent; /* في اليمين للموقع العربي */
+}
+.menu-link i {
+  margin-left: 12px;
+  font-size: 1.1rem;
+  color: #999;
+  transition: 0.3s;
+}
+
+.menu-link:hover,
+.menu-link.active {
+  background-color: #fff5f5; /* أحمر فاتح جداً */
+  color: var(--main-navy);
+  border-right: 4px solid var(--main-red); /* خط أحمر جانبي */
+}
+.menu-link:hover i,
+.menu-link.active i {
+  color: var(--main-red);
+}
+
+/* --- Cards Styling --- */
+.profile-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+  border: 1px solid #eaeaea;
+  overflow: hidden;
+}
+
+.card-header-custom {
+  padding: 20px 25px;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: center;
+}
+.card-header-custom h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--main-navy);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.card-header-custom h3 i {
+  color: var(--main-red);
+}
+
+.card-body-custom {
+  padding: 30px;
+}
+
+/* --- Inputs & Password Toggle --- */
+.password-group {
+  position: relative;
+}
+.password-group .toggle-pass {
+  position: absolute;
+  top: 50%;
+  left: 15px; /* يسار عشان الموقع عربي */
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #999;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: 0.3s;
+}
+.password-group .toggle-pass:hover {
+  color: var(--main-navy);
+}
+
+.form-control {
+  border-radius: 8px;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  color: #333;
+}
+.form-control:focus {
+  border-color: var(--main-navy);
+  box-shadow: 0 0 0 3px rgba(17, 45, 78, 0.1);
+}
+label {
+  color: var(--main-navy);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+/* --- Buttons --- */
+.btn-save {
+  background-color: var(--main-navy);
+  color: #fff;
+  border: none;
+  padding: 12px 35px;
+  border-radius: 30px;
+  font-weight: 700;
+  transition: 0.3s;
+}
+.btn-save:hover {
+  background-color: var(--main-red);
+  box-shadow: 0 5px 15px rgba(219, 45, 46, 0.2);
+}
+
+.btn-save.outline {
+  background: transparent;
+  border: 2px solid var(--main-navy);
+  color: var(--main-navy);
+}
+.btn-save.outline:hover {
+  background-color: var(--main-navy);
+  color: #fff;
+}
+
+/* Danger Zone */
+.danger-zone {
+  background: #fff;
+  border: 1px dashed #dc3545;
+  border-radius: 12px;
+  padding: 25px;
+}
+.btn-delete {
+  background-color: #fee2e2;
+  color: #dc3545;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.btn-delete:hover {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.form-side::-webkit-scrollbar {
+  width: 8px;
+}
+.form-side::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+.form-side::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 4px;
+}
+.form-side::-webkit-scrollbar-thumb:hover {
+  background: #db2d2e;
+}
+
+@media (max-width: 991px) {
+  body {
+    overflow: auto;
+  }
+  .split-screen {
+    height: auto;
+  }
+  .brand-side {
+    height: 250px;
+  }
+  .form-side {
+    height: auto;
+    overflow-y: visible;
+  }
+}

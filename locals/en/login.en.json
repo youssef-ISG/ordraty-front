@@ -1,0 +1,13 @@
+{
+  "login.title": "Login to your account",
+  "login.description": "Enter your email and password to continue",
+  "login.email_label": "Email Address",
+  "login.email_placeholder": "name@example.com",
+  "login.password_label": "Password",
+  "login.password_placeholder": "Enter your password",
+  "login.create_account": "Create new account",
+  "login.forgot_password": "Forgot password?",
+  "login.submit_btn": "Login",
+  "login.back_home": "Back to home page",
+  "login.required_mark": "*"
+}

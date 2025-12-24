@@ -1,0 +1,184 @@
+
+
+.login-split-screen {
+    min-height: 100vh;
+    width: 100%;
+    background-color: #fff;
+    overflow: hidden;
+    font-family: 'Cairo', sans-serif; 
+    display: flex;
+}
+
+.brand-side {
+    background-image: url('../images/login-bg.jpg'); 
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    height: 100vh;
+}
+
+
+.brand-side .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 1;
+}
+
+.brand-content {
+    z-index: 2; 
+}
+
+.login-brand-logo {
+    max-width: 180px; 
+    filter: drop-shadow(0 0 10px rgba(255, 190, 51, 0.3));
+}
+
+.form-side {
+    background-color: #ffffff;
+}
+
+.custom-input {
+    height: 50px;
+    border-radius: 8px;
+    border: 1px solid #e1e1e1;
+    background-color: #fcfcfc;
+    padding-right: 15px;
+    padding-left: 45px;
+    transition: all 0.3s ease;
+}
+
+.custom-input:focus {
+    border-color: #DB2D2E;
+    box-shadow: 0 0 0 4px rgba(255, 190, 51, 0.1);
+    background-color: #fff;
+}
+
+.form-label {
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+}
+
+.toggle-password {
+    position: absolute;
+    left: 15px; 
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #999;
+    z-index: 10;
+}
+
+.toggle-password:hover {
+    color: #DB2D2E;
+}
+
+.btn-login {
+    background-color: #DB2D2E;
+    border-color: #DB2D2E;
+    color: #fff;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-login:hover {
+    background-color: #112D4E; 
+    border-color: #112D4E;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 190, 51, 0.3);
+}
+
+a.text-warning {
+    color: #DB2D2E !important;
+}
+a.text-warning:hover {
+    color: #112D4E !important;
+    text-decoration: underline !important;
+}
+
+.bg-pattern {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(#DB2D2E 1px, transparent 1px);
+    background-size: 30px 30px;
+    opacity: 0.03;
+    z-index: 0;
+    pointer-events: none;
+}
+
+
+        .split-screen {
+            height: 100vh;
+            width: 100%;
+        }
+        .brand-content { z-index: 2; position: relative; }
+
+        .form-side {
+            background-color: #fff;
+            height: 100vh;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; 
+            align-items: center;
+        }
+        
+        .form-side.long-content {
+            justify-content: flex-start;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        .form-container {
+            width: 100%;
+            max-width: 550px; 
+            padding: 20px;
+        }
+
+        .form-label {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .custom-input {
+            height: 45px;
+            border-radius: 8px;
+            border: 1px solid #eee;
+            background-color: #fcfcfc;
+            padding: 10px 15px;
+            font-size: 0.95rem;
+        }
+        
+        .custom-input:focus {
+            border-color: #DB2D2E;
+            background-color: #fff;
+            box-shadow: 0 0 0 3px rgba(255, 190, 51, 0.1);
+        }
+
+        textarea.custom-input {
+            height: auto;
+            resize: none;
+        }
+
+        .btn-register {
+            background-color: #DB2D2E;
+            border-color: #DB2D2E;
+            color: #fff;
+            font-weight: bold;
+            padding: 12px;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+        .btn-register:hover {
+            background-color: #112D4E;
+            color: #fff;
+        }

@@ -1,0 +1,15 @@
+{
+  "contact.title": "Contact Us",
+  "contact.sub_title": "Our support team is ready to answer your inquiries",
+  "contact.placeholder_name": "Full Name",
+  "contact.placeholder_phone": "Phone Number",
+  "contact.placeholder_email": "Email Address",
+  "contact.placeholder_message": "Write your message here...",
+  "contact.submit_btn": "Send Message",
+  "contact.info_title": "Contact Details",
+  "contact.info_desc": "You can visit our branches or contact us directly.",
+  "contact.address_label": "Address",
+  "contact.address_value": "90th Street, Fifth Settlement, Cairo",
+  "contact.phone_label": "Phone",
+  "contact.email_label": "Email"
+}

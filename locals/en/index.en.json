@@ -1,0 +1,44 @@
+{
+  "head.title": "Orderaty - Supermarket in your pocket",
+  "head.description": "Shop for the best fresh products, meat, and groceries from Orderaty. Fast delivery and guaranteed quality.",
+  "head.keywords": "supermarket, online shopping, fresh vegetables, delivery, Egypt",
+
+  "slider.title": "Welcome to Orderaty",
+  "slider.subtitle": "Supermarket in your pocket!",
+  "slider.desc": "No need to go out and wait. With Orderaty, order all your daily needs with a click of a button and enjoy fresh products and exclusive offers delivered in minutes.",
+  "slider.order_now": "Order Now",
+  "slider.book_now": "Book Now",
+
+  "order_type.title": "How can we serve you today?",
+  "order_type.subtitle": "Choose the path that suits your time and needs",
+  "order_type.now_title": "Order Now",
+  "order_type.now_desc": "Fast shopping, instant pickup. Your order is ready before you arrive.",
+  "order_type.scheduled_title": "Scheduled Orders",
+  "order_type.scheduled_desc": "Organize your time and set an appointment. We reach you exactly as planned.",
+
+  "cats.title": "Browse by Category",
+  "cats.subtitle": "Everything your home needs in one place",
+  "cats.veg": "Vegetables & Fruits",
+  "cats.veg_desc": "Fresh daily",
+  "cats.meat": "Meat & Poultry",
+  "cats.meat_desc": "Best quality",
+  "cats.bakery": "Bakery",
+  "cats.bakery_desc": "From the oven to you",
+  "cats.grocery": "Dry Grocery",
+  "cats.grocery_desc": "Rice, Pasta, Oils",
+  "cats.dairy": "Dairy & Cheese",
+  "cats.dairy_desc": "Natural products",
+  "cats.shop_now": "Shop Now",
+
+  "about.title": "About Us",
+  "about.desc": "Welcome to \"Orderaty\", your first destination for shopping home essentials with the highest quality and best prices.<br><br>We strive to provide a modern shopping experience that combines variety from fresh vegetables, meat, and canned goods, with ease of ordering and fast delivery to your door.",
+  "about.more": "Read More",
+
+  "reviews.title": "Our Clients' Opinions",
+  "reviews.total": "Based on",
+  "reviews.review":"Reviews",
+  "reviews.add": "Add your review",
+  "reviews.client1_text": "Excellent experience and the products are very fresh.",
+  "reviews.client2_text": "Fast delivery and great packaging.",
+  "reviews.client3_text": "Easy to use app and excellent customer service."
+}

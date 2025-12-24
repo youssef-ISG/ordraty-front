@@ -1,0 +1,19 @@
+{
+  "register.title": "إنشاء حساب جديد",
+  "register.description": "املأ البيانات التالية لإنشاء حسابك",
+  "register.first_name": "الاسم الأول",
+  "register.last_name": "اسم العائلة",
+  "register.email": "البريد الإلكتروني",
+  "register.email_placeholder": "name@example.com",
+  "register.password": "كلمة المرور",
+  "register.password_placeholder": "أدخل كلمة مرور قوية",
+  "register.phone": "رقم الهاتف",
+  "register.phone_placeholder": "01xxxxxxxxx",
+  "register.main_address": "العنوان الرئيسي (مطلوب)",
+  "register.main_address_placeholder": "اسم الشارع، رقم المبنى، تفاصيل العنوان...",
+  "register.optional_address": "عنوان إضافي (اختياري)",
+  "register.optional_address_placeholder": "عنوان العمل أو منزل آخر...",
+  "register.submit_btn": "تسجيل الحساب",
+  "register.have_account": "لديك حساب بالفعل؟",
+  "register.login_link": "تسجيل الدخول"
+}

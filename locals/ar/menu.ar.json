@@ -1,0 +1,19 @@
+{
+  "products.title": "منتجاتنا",
+  "products.filter_title": "تصفية النتائج",
+  "products.categories_title": "التصنيفات",
+  "products.all_categories": "جميع التصنيفات",
+  "products.brands_title": "العلامة التجارية",
+  "products.brand_all": "الكل",
+  "products.breadcrumb_home": "الرئيسية",
+  "products.filter_btn": "تصفية",
+  "products.sort_by": "ترتيب حسب",
+  "products.sort_low_price": "الأقل سعراً",
+  "products.sort_high_price": "الأكثر سعراً",
+  "products.sort_newest": "الاحدث",
+  "products.sort_oldest": "الاقدم",
+  "products.discount": "خصم",
+  "products.currency": "جنيه",
+  "products.add_to_cart": "أضف إلى السلة",
+  "products.view_more": "عرض المزيد"
+}

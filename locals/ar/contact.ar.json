@@ -1,0 +1,15 @@
+{
+  "contact.title": "تواصل معنا",
+  "contact.sub_title": "لدينا فريق دعم جاهز للرد على استفساراتكم",
+  "contact.placeholder_name": "الاسم بالكامل",
+  "contact.placeholder_phone": "رقم الهاتف",
+  "contact.placeholder_email": "البريد الإلكتروني",
+  "contact.placeholder_message": "اكتب رسالتك هنا...",
+  "contact.submit_btn": "إرسال الرسالة",
+  "contact.info_title": "بيانات التواصل",
+  "contact.info_desc": "يمكنكم زيارتنا في فروعنا أو الاتصال بنا مباشرة.",
+  "contact.address_label": "العنوان",
+  "contact.address_value": "شارع التسعين، التجمع الخامس، القاهرة",
+  "contact.phone_label": "الهاتف",
+  "contact.email_label": "البريد الإلكتروني"
+}

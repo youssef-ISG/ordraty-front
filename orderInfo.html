@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>تفاصيل الطلب #31 - أوردراتي</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>تفاصيل الطلب - أوردراتي</title>
+
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
@@ -14,8 +19,10 @@
     <link rel="stylesheet" href="./css/common/cart-popup.css" />
 
     <link href="./css/common/all.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="css/order-details.css" />
+
+    <link href="css/order-form.css" rel="stylesheet" />
   </head>
+
   <body>
     <div id="header">
       <header class="header_section">
@@ -199,140 +206,194 @@
         </div>
       </header>
     </div>
-    <div class="container my-5">
-      <div class="heading_container heading_center mb-5">
-        <h2>تفاصيل الطلب رقم <span class="text-danger">#31</span></h2>
-        <p class="text-muted">تم تقديم الطلب في: 29-11-2025 | 09:30 م</p>
-      </div>
 
-      <div class="order-progress-card mb-4">
-        <div class="steps-container">
-          <div class="step completed">
-            <div class="step-icon">
-              <i class="fa-solid fa-file-invoice"></i>
+    <section class="order_details_section">
+      <div class="container">
+        <!-- <div class="checkout-progress">
+            <div class="progress-line"></div>
+            <div class="progress-step completed"><i class="fa fa-check"></i></div>
+            <div class="progress-step active">2</div>
+            <div class="progress-step">3</div>
+        </div> -->
+
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="order-card">
+              <div class="deco-circle"></div>
+
+              <h2>تفاصيل الطلب</h2>
+              <p class="subtitle">يرجى ملء البيانات التالية لإتمام الطلب</p>
+
+              <form action="#">
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <div class="form-group">
+                      <label>الاسم الأول</label>
+                      <div class="input-wrapper">
+                        <i class="fa-regular fa-user"></i>
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder="ادخل الاسم الأول"
+                          value=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <div class="form-group">
+                      <label>اسم العائلة</label>
+                      <div class="input-wrapper">
+                        <i class="fa-regular fa-user"></i>
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder="ادخل الاسم الأخير"
+                          value=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <div class="form-group">
+                      <label>رقم الهاتف</label>
+                      <div class="input-wrapper">
+                        <i class="fa-solid fa-phone-flip"></i>
+                        <input
+                          type="tel"
+                          class="form-control"
+                          placeholder="01xxxxxxxxx"
+                          value=""
+                          style="direction: ltr; text-align: right"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <div class="form-group">
+                      <label>البريد الإلكتروني</label>
+                      <div class="input-wrapper">
+                        <i class="fa-regular fa-envelope"></i>
+                        <input
+                          type="email"
+                          class="form-control"
+                          value=""
+                          placeholder="ادخل البريد الإلكتروني"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group mb-4">
+                  <label class="d-block mb-3 fw-bold text-dark"
+                    >اختر تاريخ التوصيل</label
+                  >
+                  <div
+                    id="date-pills-container"
+                    class="date-scroll-wrapper"
+                  ></div>
+                  <input
+                    type="hidden"
+                    id="selected-delivery-date"
+                    name="delivery_date"
+                    required
+                  />
+                </div>
+
+                <div class="form-group mb-4">
+                  <label class="d-block mb-3 fw-bold text-dark"
+                    >موعد التوصيل المناسب</label
+                  >
+                  <div class="time-selection-grid">
+                    <div class="time-card active" data-time="09:00-12:00">
+                      <div class="time-icon">
+                        <i class="fa-regular fa-sun"></i>
+                      </div>
+                      <div class="time-text">
+                        <strong>الصباح</strong>
+                        <span>9ص - 12ظ</span>
+                      </div>
+                    </div>
+                    <div class="time-card" data-time="12:00-16:00">
+                      <div class="time-icon">
+                        <i class="fa-solid fa-cloud-sun"></i>
+                      </div>
+                      <div class="time-text">
+                        <strong>الظهيرة</strong>
+                        <span>12ظ - 4م</span>
+                      </div>
+                    </div>
+                    <div class="time-card" data-time="16:00-20:00">
+                      <div class="time-icon">
+                        <i class="fa-solid fa-moon"></i>
+                      </div>
+                      <div class="time-text">
+                        <strong>المساء</strong>
+                        <span>4م - 8م</span>
+                      </div>
+                    </div>
+                  </div>
+                  <input
+                    type="hidden"
+                    id="time_shedule"
+                    name="time_shedule"
+                    value="09:00-12:00"
+                    required
+                  />
+                </div>
+
+                <div class="form-group mb-3">
+                  <label>طريقة التوصيل</label>
+                  <div class="input-wrapper">
+                    <i class="fa-solid fa-truck-fast"></i>
+                    <select
+                      class="form-control"
+                      aria-placeholder="اختر طريقة التوصيل"
+                    >
+                      <option value="">اختر طريقة التوصيل</option>
+                      <option value="">توصيل للمنزل</option>
+                      <option value="">استلام من الفرع</option>
+                    </select>
+                    <span class="select-arrow"
+                      ><i class="fa-solid fa-chevron-down"></i
+                    ></span>
+                  </div>
+                </div>
+
+                <div class="form-group mb-4">
+                  <label>ملاحظات إضافية (اختياري)</label>
+                  <div class="input-wrapper">
+                    <i
+                      class="fa-regular fa-comment-dots textarea-icon"
+                      style="top: 20px"
+                    ></i>
+                    <textarea
+                      class="form-control"
+                      rows="3"
+                      placeholder="ادخل ملاحظات إضافية (اختياري)"
+                    ></textarea>
+                  </div>
+                </div>
+
+                <button type="submit" class="btn-submit">
+                  تأكيد ومتابعة <i class="fa-solid fa-arrow-left ms-2"></i>
+                </button>
+
+                <a href="branches.html" class="btn-back">
+                  <i class="fa-solid fa-rotate-right"></i> العودة لاختيار الفرع
+                </a>
+              </form>
             </div>
-            <div class="step-label">تم الطلب</div>
-          </div>
-          <div class="step active">
-            <div class="step-icon"><i class="fa-solid fa-utensils"></i></div>
-            <div class="step-label">قيد التجهيز</div>
-          </div>
-          <div class="step">
-            <div class="step-icon"><i class="fa-solid fa-truck-fast"></i></div>
-            <div class="step-label">في الطريق</div>
-          </div>
-          <div class="step">
-            <div class="step-icon">
-              <i class="fa-solid fa-house-circle-check"></i>
-            </div>
-            <div class="step-label">تم التوصيل</div>
-          </div>
-          <div class="progress-line">
-            <div class="progress-fill" style="width: 33%"></div>
           </div>
         </div>
       </div>
+    </section>
 
-      <div class="row">
-        <div class="col-lg-8">
-          <div class="details-card products-list mb-4">
-            <h5 class="card-title border-bottom pb-3">
-              <i class="fa-solid fa-basket-shopping ml-2"></i> المنتجات المطلوبة
-            </h5>
-
-            <div
-              class="product-item d-flex align-items-center py-3 border-bottom"
-            >
-              <img
-                src="images/f1.png"
-                alt="product"
-                class="img-thumbnail"
-                style="width: 80px"
-              />
-              <div class="flex-grow-1 mr-3 text-right">
-                <h6 class="mb-1">أرز بسمتي فاخر (1 كيلو)</h6>
-                <small class="text-muted">الكمية: 5</small>
-              </div>
-              <div class="text-danger font-weight-bold">300.00 جنيه</div>
-            </div>
-
-            <div
-              class="product-item d-flex align-items-center py-3 border-bottom"
-            >
-              <img
-                src="images/f1.png"
-                alt="product"
-                class="img-thumbnail"
-                style="width: 80px"
-              />
-              <div class="flex-grow-1 mr-3 text-right">
-                <h6 class="mb-1">أرز بسمتي فاخر (5 كيلو)</h6>
-                <small class="text-muted">الكمية: 1</small>
-              </div>
-              <div class="text-danger font-weight-bold">280.00 جنيه</div>
-            </div>
-
-            <div class="order-summary mt-3 text-right">
-              <div class="d-flex justify-content-between mb-2">
-                <span>الإجمالي الفرعي:</span>
-                <span>580.00 جنيه</span>
-              </div>
-              <div class="d-flex justify-content-between mb-2 text-success">
-                <span>خصم العروض:</span>
-                <span>-30.00 جنيه</span>
-              </div>
-              <div
-                class="d-flex justify-content-between border-top pt-3 h5 font-weight-bold"
-              >
-                <span>الإجمالي النهائي:</span>
-                <span class="text-danger">550.00 جنيه</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 text-right text-right-rtl">
-          <div class="details-card mb-4 branch-info">
-            <h5 class="card-title border-bottom pb-3">
-              <i class="fa-solid fa-store ml-2"></i> فرع التجهيز
-            </h5>
-            <div class="branch-details mt-3">
-              <h6 class="font-weight-bold">فرع التجمع الخامس</h6>
-              <p class="mb-1 text-muted">
-                <i class="fa-solid fa-location-dot ml-1"></i> شارع التسعين
-                الجنوبي، بجوار مجمع البنوك
-              </p>
-              <p class="mb-0 text-muted">
-                <i class="fa-solid fa-phone ml-1"></i> 0123456789
-              </p>
-            </div>
-          </div>
-
-          <div class="details-card mb-4 shipping-address">
-            <h5 class="card-title border-bottom pb-3">
-              <i class="fa-solid fa-truck ml-2"></i> عنوان التوصيل
-            </h5>
-            <div class="address-details mt-3">
-              <p class="mb-1"><strong>الاسم:</strong> يوسف أحمد</p>
-              <p class="mb-1">
-                <strong>العنوان:</strong> التجمع الخامس، حي الياسمين، فيلا 25،
-                الدور الثاني
-              </p>
-              <p class="mb-0"><strong>الهاتف:</strong> 01020304050</p>
-            </div>
-          </div>
-
-          <div class="actions">
-            <button class="btn btn-outline-danger btn-block mb-2">
-              <i class="fa-solid fa-print ml-2"></i> طباعة الفاتورة
-            </button>
-            <a href="contact.html" class="btn btn-secondary btn-block"
-              ><i class="fa-solid fa-headset ml-2"></i> مساعدة في الطلب</a
-            >
-          </div>
-        </div>
-      </div>
-    </div>
+    <!-- footer section -->
     <footer class="footer_section">
       <div id="footer">
         <div class="container">
@@ -455,11 +516,10 @@
         </div>
       </div>
     </div>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/cartPopuo.js"></script>
+    <script src="./js/langs.js"></script>
+    <script src="./js/orderForm.js"></script>
   </body>
-
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="./js/main.js"></script>
-  <script src="./js/cartPopuo.js"></script>
-  <script src="./js/langs.js"></script>
 </html>

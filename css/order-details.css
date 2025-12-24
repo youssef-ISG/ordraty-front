@@ -1,0 +1,103 @@
+/* تنسيقات صفحة تفاصيل الطلب */
+body {
+    background-color: #f8f9fa;
+}
+
+.details-card {
+    background: #fff;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
+}
+
+.card-title {
+    color: #112d4e;
+    font-weight: 700;
+}
+
+/* شريط التقدم - Progress Bar */
+.order-progress-card {
+    background: #fff;
+    padding: 40px 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.steps-container {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.step {
+    z-index: 2;
+    text-align: center;
+    position: relative;
+    width: 100px;
+}
+
+.step-icon {
+    width: 50px;
+    height: 50px;
+    background: #e9ecef;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 10px;
+    font-size: 1.2rem;
+    color: #adb5bd;
+    transition: 0.3s;
+    border: 3px solid #fff;
+}
+
+.step-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #adb5bd;
+}
+
+/* الحالات النشطة والمكتملة */
+.step.completed .step-icon, 
+.step.active .step-icon {
+    background: #db2d2e;
+    color: #fff;
+}
+
+.step.completed .step-label, 
+.step.active .step-label {
+    color: #112d4e;
+}
+
+.progress-line {
+    position: absolute;
+    top: 25px;
+    left: 50px;
+    right: 50px;
+    height: 4px;
+    background: #e9ecef;
+    z-index: 1;
+}
+
+.progress-fill {
+    height: 100%;
+    background: #db2d2e;
+    transition: 0.5s ease;
+}
+
+/* توافق RTL */
+.text-right-rtl {
+    text-align: right !important;
+}
+
+.product-item img {
+    border-radius: 10px;
+    background: #fdfdfd;
+}
+
+.order-summary span {
+    color: #555;
+}

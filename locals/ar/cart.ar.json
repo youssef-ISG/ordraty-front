@@ -1,0 +1,15 @@
+{
+  "cart.page_title": "عربة التسوق الخاصة بك",
+  "cart.table_product": "المنتج",
+  "cart.table_price": "السعر",
+  "cart.table_quantity": "الكمية",
+  "cart.table_total": "الإجمالي",
+  "cart.table_remove": "إزالة",
+  "cart.remove_btn": "إزالة",
+  "cart.subtotal_label": "الإجمالي الفرعي:",
+  "cart.total_label": "الإجمالي النهائي:",
+  "cart.checkout_btn": "الانتقال للدفع",
+  "cart.continue_btn": "متابعة التسوق",
+  "cart.empty_message": "عربتك فارغة حالياً.",
+  "cart.currency": "جنيه"
+}

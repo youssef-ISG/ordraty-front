@@ -1,0 +1,197 @@
+.contact_section_creative {
+  background-color: #f8f9fa;
+  position: relative;
+  z-index: 1;
+}
+
+.contact_wrapper {
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+  margin: 20px 0;
+}
+
+/* 1. تنسيق الفورم (الجانب الأيمن) */
+.contact_form_inner {
+  padding: 50px;
+}
+
+.input-group {
+  position: relative;
+  background-color: #fcfcfc;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+
+/* أيقونة داخل الحقل */
+.input-icon {
+  position: absolute;
+  right: 15px;
+  top: 12px;
+  color: #db2d2e;
+  z-index: 10;
+}
+.input-icon.textarea-icon {
+  top: 15px;
+}
+
+.contact_form_inner .form-control {
+  background: transparent;
+  border: none;
+  height: 45px;
+  padding-right: 45px; /* مسافة للأيقونة */
+  box-shadow: none;
+  border-radius: 10px;
+  color: #333;
+}
+
+.contact_form_inner textarea.form-control {
+  height: auto;
+  padding-top: 15px;
+}
+
+/* تأثير عند الكتابة */
+.input-group:focus-within {
+  border-color: #db2d2e;
+  box-shadow: 0 5px 15px rgba(255, 190, 51, 0.1);
+  background-color: #fff;
+}
+
+.contact_form_inner button {
+  background-color: #db2d2e;
+  color: #fff;
+  padding: 12px 45px;
+  border-radius: 30px;
+  border: none;
+  font-weight: bold;
+  margin-top: 20px;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.contact_form_inner button:hover {
+  background-color: #112d4e;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* 2. تنسيق لوحة المعلومات (الجانب الأيسر) */
+.contact_info_panel {
+  background-color: #112d4e; /* لون الهوية الداكن */
+  height: 100%;
+  padding: 50px;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.panel-title {
+  font-weight: bold;
+  margin-bottom: 15px;
+  position: relative;
+  z-index: 2;
+}
+
+.panel-desc {
+  color: #aaa;
+  font-size: 0.9rem;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 2;
+}
+
+.info_items .item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 2;
+}
+
+.info_items .icon {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #db2d2e;
+  font-size: 1.2rem;
+  margin-left: 20px;
+  transition: 0.3s;
+}
+
+.info_items .item:hover .icon {
+  background-color: #db2d2e;
+  color: #fff;
+}
+
+.info_items .text h5 {
+  font-size: 1rem;
+  margin: 0;
+  color: #fff;
+  font-weight: bold;
+}
+
+.info_items .text p {
+  font-size: 0.9rem;
+  margin: 0;
+  color: #ccc;
+}
+
+/* سوشيال ميديا */
+.social_box_contact {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.social_box_contact a {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  transition: 0.3s;
+}
+
+.social_box_contact a:hover {
+  background-color: #db2d2e;
+  border-color: #db2d2e;
+  transform: translateY(-3px);
+}
+
+/* دوائر زخرفية في الخلفية */
+.circle-1 {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: rgba(255, 190, 51, 0.1);
+  border-radius: 50%;
+  bottom: -50px;
+  right: -50px;
+  z-index: 1;
+}
+
+.circle-2 {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 190, 51, 0.05);
+  border-radius: 50%;
+  top: 20px;
+  left: 20px;
+  z-index: 1;
+}

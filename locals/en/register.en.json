@@ -1,0 +1,20 @@
+{
+  "register.title": "Create New Account",
+  "register.description": "Fill in the details below to create your account",
+  "register.first_name": "First Name",
+  "register.last_name": "Last Name",
+
+  "register.email": "Email Address",
+  "register.email_placeholder": "name@example.com",
+  "register.password": "Password",
+  "register.password_placeholder": "Enter a strong password",
+  "register.phone": "Phone Number",
+  "register.phone_placeholder": "01xxxxxxxxx",
+  "register.main_address": "Main Address (Required)",
+  "register.main_address_placeholder": "Street name, building number, address details...",
+  "register.optional_address": "Additional Address (Optional)",
+  "register.optional_address_placeholder": "Work address or another home...",
+  "register.submit_btn": "Register Account",
+  "register.have_account": "Already have an account?",
+  "register.login_link": "Login"
+}

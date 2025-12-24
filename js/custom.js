@@ -19,65 +19,7 @@ function myMap() {
         var map = new google.maps.Map(mapElement, mapProp);
     }
 }
-// return the cart content from local Storage
-function getCart() {
-    return JSON.parse(localStorage.getItem("cart")) || [];
-}
-// set new cart Product and old product to the local storage
-function saveCart(cart) {
-    localStorage.setItem("cart", JSON.stringify(cart));
-}
-//update cart count in the header 
-function updateCartCount() {
-    const cart = getCart();
-    const count = cart.reduce((t, p) => t + p.quantity, 0);
-    $("#cart-count").text(count);
-}
 
-function showCartPopup() {
-    $("#cart-popup-done").addClass("show");
-    setTimeout(() => {
-        $("#cart-popup-done").removeClass("show");
-    }, 2000);
-}
-
-function renderCartPopup() {
-    const cart = getCart();
-    const cartContainer = $('#cart-popup .cart-items-container');
-    const subtotalEl = $('#cart-popup .subtotal');
-
-    if (!cartContainer.length) return;
-
-    const templateItem = cartContainer.find('.cart-item').first();
-    if (!templateItem.length) return;
-
-    templateItem.hide();
-    cartContainer.find('.dynamic-item').remove();
-    cartContainer.find('.empty-cart-msg').remove();
-
-    let subtotal = 0;
-
-    if (cart.length === 0) {
-        cartContainer.append('<p class="empty-cart-msg" style="text-align: center; padding: 20px;">عربتك فارغة.</p>');
-        subtotalEl.text('0.00 جنيه');
-        return;
-    }
-
-    cart.forEach(product => {
-        const newItem = templateItem.clone();
-        newItem.addClass('dynamic-item');
-        newItem.attr('data-id', product.id);
-        newItem.find('img').attr('src', product.image).attr('alt', product.name);
-        newItem.find('.item-name').text(product.name);
-        newItem.find('.item-price').text(`${product.price.toFixed(2)} جنيه`);
-        newItem.find('input[type="number"]').val(product.quantity);
-        newItem.show();
-        cartContainer.append(newItem);
-        subtotal += (product.price * product.quantity);
-    });
-
-    subtotalEl.text(`${subtotal.toFixed(2)} جنيه`);
-}
 
 function renderCartPage() {
     const cart = getCart();
@@ -271,54 +213,7 @@ $(document).ready(function () {
         }
     });
 
-    if ($("#cartPopup").length > 0) {       
-            function closeCartPopup() {
-                $('#cart-popup').fadeOut(300);
-                $('body').removeClass('modal-open');
-            }
 
-            $('.cart_link').click(function (e) {
-                e.preventDefault();
-                renderCartPopup();
-                $('#cart-popup').fadeIn(300);
-                $('body').addClass('modal-open');
-            });
-
-            $('.cart-close-btn').click(function () { closeCartPopup(); });
-            $('.continue-shopping').click(function () { closeCartPopup(); });
-            $('#cart-popup').click(function (e) {
-                if ($(e.target).is('#cart-popup')) {
-                    closeCartPopup();
-                }
-            });
-
-            $('#cart-popup').on('click', '.remove-btn', function () {
-                const cartItem = $(this).closest('.cart-item');
-                const productId = cartItem.data('id');
-                if (!productId) return;
-                let cart = getCart();
-                cart = cart.filter(p => p.id != productId);
-                saveCart(cart);
-                renderCartPopup();
-                updateCartCount();
-            });
-
-            $('#cart-popup').on('change', 'input[type="number"]', function () {
-                const cartItem = $(this).closest('.cart-item');
-                const productId = cartItem.data('id');
-                const newQuantity = parseInt($(this).val());
-                if (!productId) return;
-                let cart = getCart();
-                const product = cart.find(p => p.id == productId);
-                if (product && newQuantity > 0) {
-                    product.quantity = newQuantity;
-                }
-                saveCart(cart);
-                renderCartPopup();
-                updateCartCount();
-            });
-        
-    }
 
     if ($("#cart-table-body").length > 0) {
         renderCartPage();
@@ -406,7 +301,68 @@ $(document).ready(function () {
         }
     });
 
-    $(document).on('click', '.product-card-modern .img-box, .product-card-modern .add-to-cart-btn, .product-card .image-wrapper, .product-card .add-to-cart-btn', function (e) {
+    // ==========================================
+    //  Profile Page Logic
+    // ==========================================
+
+    // 1. زر حفظ البيانات
+    $('#profileForm').on('submit', function(e) {
+        e.preventDefault();
+        // هنا كود الـ API لحفظ البيانات
+        alert('تم حفظ التغييرات بنجاح!');
+    });
+
+    // 2. زر تغيير كلمة المرور
+    $('#passwordForm').on('submit', function(e) {
+        e.preventDefault();
+        alert('تم تحديث كلمة المرور بنجاح!');
+        // تفريغ الحقول
+        $(this).find('input').val('');
+    });
+
+    // 3. زر حذف الحساب (تأكيد)
+    $('#deleteAccountBtn').on('click', function() {
+        if(confirm('هل أنت متأكد تماماً أنك تريد حذف حسابك؟ هذا الإجراء لا يمكن التراجع عنه.')) {
+            // هنا كود الـ API للحذف
+            alert('تم حذف الحساب.');
+            
+            // مسح البيانات وتسجيل الخروج
+            localStorage.removeItem('cart');
+            // localStorage.removeItem('user_token'); 
+            
+            window.location.href = "index.html";
+        }
+    });
+
+    // 4. زر تسجيل الخروج (من السايد بار أو الهيدر)
+    $(document).on('click', '#logoutBtnSidebar, .logout', function(e) {
+        e.preventDefault();
+        
+        // مسح بيانات الجلسة (اختياري حسب نظامك)
+        // localStorage.removeItem('user_token');
+        
+        // توجيه لصفحة تسجيل الدخول
+        window.location.href = "login.html";
+    });
+
+    if ($('.sidebar-overlay').length === 0) {
+        $('body').append('<div class="sidebar-overlay"></div>');
+    }
+
+    $('#filterSidebarToggle').on('click', function(e) {
+        e.preventDefault();
+        $('#sidebarMenu').addClass('active');
+        $('.sidebar-overlay').addClass('show');
+        $('body').addClass('modal-open');
+    });
+
+    $('#closeSidebar, .sidebar-overlay').on('click', function() {
+        $('#sidebarMenu').removeClass('active');
+        $('.sidebar-overlay').removeClass('show');
+        $('body').removeClass('modal-open');
+    });
+
+    $(document).on('click', '.product-card .image-wrapper, .product-card .add-to-cart-btn', function (e) {
         e.preventDefault();
 
         const card = $(this).closest('.product-card, .product-card-modern');
@@ -605,9 +561,36 @@ $(document).ready(function () {
         }
     });
 
-    if ($('select').length > 0) {
-        $('select').niceSelect();
-    }
+    //profile page js
+    $('.toggle-pass').on('click', function() {
+            let input = $(this).siblings('input');
+            let icon = $(this).find('i');
+            
+            if (input.attr('type') === "password") {
+                input.attr('type', 'text');
+                icon.removeClass('fa-eye').addClass('fa-eye-slash');
+            } else {
+                input.attr('type', 'password');
+                icon.removeClass('fa-eye-slash').addClass('fa-eye');
+            }
+        });
+        $("#uploadProfile").change(function() {
+            if (this.files && this.files[0]) {
+                var reader = new FileReader();
+                
+                reader.onload = function(e) {
+                    // تغيير مصدر الصورة بالبيانات الجديدة
+                    $('#profileImage').attr('src', e.target.result);
+                }
+                
+                // قراءة الملف كـ رابط بيانات
+                reader.readAsDataURL(this.files[0]);
+            }
+        });
+
+    // if ($('select').length > 0) {
+    //     $('select').niceSelect();
+    // }
 
     if ($('.client_owl-carousel').length > 0) {
         $(".client_owl-carousel").owlCarousel({

@@ -1,0 +1,283 @@
+.orders_section {
+    background-color: #f9f9f9;
+    min-height: 80vh;
+}
+
+.orders-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* كارت الطلب */
+    .order-card {
+        background: #fff;
+        border-radius: 20px;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+        padding: 40px;
+        position: relative;
+        overflow: hidden;
+        border-top: 5px solid #DB2D2E;
+    }
+
+        .order-card h2 {
+        text-align: center;
+        font-weight: 800;
+        color: #333;
+        margin-bottom: 10px;
+    }
+    
+    .order-card .subtitle {
+        text-align: center;
+        color: #777;
+        margin-bottom: 40px;
+        font-size: 0.9rem;
+    }
+
+
+.order-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    border-color: #DB2D2E;
+}
+
+/* رأس الكارت (رقم الطلب والحالة) */
+.order-header {
+    background-color: #fdfdfd;
+    padding: 15px 25px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.order-id {
+    font-weight: bold;
+    color: #555;
+    font-size: 1.1rem;
+}
+.order-id span {
+    color: #112D4E;
+    font-family: sans-serif; /* للأرقام */
+}
+
+/* ألوان الحالات */
+.order-status {
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding: 5px 12px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.order-status.pending {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.order-status.completed {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.order-status.cancelled {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+/* جسم الكارت (التفاصيل) */
+.order-body {
+    padding: 20px 25px;
+}
+
+.info-group {
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.info-group .label {
+    color: #777;
+    margin-left: 5px;
+    font-weight: 500;
+}
+.info-group .label i {
+    color: #DB2D2E;
+    width: 20px;
+    text-align: center;
+}
+
+.info-group .value {
+    color: #333;
+    font-weight: 600;
+}
+
+.info-group .value.price {
+    color: #DB2D2E;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+/* أزرار الإجراءات */
+.order-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end; /* للأجهزة الكبيرة */
+}
+
+/* --- تحسينات كروت الطلبات (Action Buttons) --- */
+
+/* تنسيق شبكة المعلومات لترتيب أفضل */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* عمودين */
+    gap: 10px;
+}
+
+/* حاوية الأزرار */
+.order-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end; /* المحاذاة لليسار في الديسك توب */
+}
+
+/* الزر العام */
+.btn-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: 8px; /* حواف ناعمة */
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 1px solid transparent;
+    flex: 1; /* لتساوي الأحجام في الموبايل */
+    white-space: nowrap;
+}
+
+/* 1. زر إعادة الطلب (الأهم - كحلي) */
+.btn-reorder {
+    background-color: var(--main-navy);
+    color: #fff;
+    border-color: var(--main-navy);
+    box-shadow: 0 4px 10px rgba(17, 45, 78, 0.2);
+}
+.btn-reorder:hover {
+    background-color: var(--main-red);
+    border-color: var(--main-red);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* 2. زر التتبع (أحمر) */
+.btn-track {
+    background-color: var(--main-red);
+    color: #fff;
+    border-color: var(--main-red);
+    box-shadow: 0 4px 10px rgba(219, 45, 46, 0.2);
+}
+.btn-track:hover {
+    background-color: #b91c1c;
+    transform: translateY(-2px);
+}
+
+/* 3. زر التقييم والتفاصيل (Outline - مفرغ) */
+.btn-rate, .btn-outline {
+    background-color: transparent;
+    color: var(--main-navy);
+    border-color: #ddd;
+}
+.btn-rate:hover, .btn-outline:hover {
+    border-color: var(--main-navy);
+    background-color: #f8f9fa;
+    color: var(--main-navy);
+}
+
+/* زر إلغاء الطلب (رابط نصي) */
+.cancel-link {
+    font-size: 0.85rem;
+    text-decoration: underline;
+    opacity: 0.8;
+    transition: 0.3s;
+}
+.cancel-link:hover {
+    opacity: 1;
+    color: #dc3545 !important;
+}
+
+/* --- تجاوب الموبايل --- */
+@media (max-width: 767px) {
+    .order-actions {
+        flex-direction: row; /* الأزرار بجانب بعض */
+        width: 100%;
+    }
+    
+    .btn-action {
+        width: 100%; /* ملء العرض */
+        padding: 12px;
+    }
+    
+    .info-grid {
+        grid-template-columns: 1fr; /* عمود واحد للمعلومات */
+        margin-bottom: 15px;
+        padding-bottom: 15px;
+        border-bottom: 1px dashed #eee;
+    }
+    
+    .text-left {
+        text-align: center !important;
+        margin-top: 15px;
+    }
+}
+
+/* في الموبايل نخليها في النص أو اليمين */
+@media (max-width: 767px) {
+    .order-actions {
+        justify-content: flex-start;
+        margin-top: 15px;
+    }
+    .breadcrumb {
+display: none;
+}
+}
+
+.btn-details, .btn-rate {
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.btn-details {
+    background-color: #112D4E;
+    color: #fff;
+    border: 1px solid #112D4E;
+}
+
+.btn-details:hover {
+    background-color: #DB2D2E;
+    border-color: #DB2D2E;
+    color: #fff;
+}
+
+.btn-rate {
+    background-color: #fff;
+    color: #DB2D2E;
+    border: 1px solid #DB2D2E;
+}
+
+.btn-rate:hover {
+    background-color: #DB2D2E;
+    color: #fff;
+}

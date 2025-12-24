@@ -1,290 +1,474 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>إتمام الطلب</title>
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-    <link href="css/all.min.css" rel="stylesheet" />
-    <link href="css/style.css" rel="stylesheet" />
-    <link href="css/responsive.css" rel="stylesheet" />
-    <link href="css/rtl.css" rel="stylesheet" />
-</head>
-<body class="sub_page">
-
-    <div class="hero_area">
-        <div class="bg-box">
-            <img src="images/hero-bg.jpg" alt="">
-        </div>
-<div id="header">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="./css/common/common.css" />
+    <link rel="stylesheet" href="./css/common/header.css" />
+    <link rel="stylesheet" href="./css/common/footer-section.css" />
+    <link rel="stylesheet" href="./css/common/cart-popup.css" />
+    <link rel="stylesheet" href="./css/checkout.css" />
+    <link href="./css/common/all.min.css" rel="stylesheet" />
+  </head>
+  <body id="checkout-page">
+    <div id="header">
       <header class="header_section">
-      <div class="container">
-        <nav class="navbar navbar-expand-lg custom_nav-container ">
-          <a class="navbar-brand" href="index.html">
-            <span>
-              <img src="images/logo.webp" alt="">
-            </span>
-          </a>
+        <div class="container">
+          <nav class="navbar navbar-expand-lg custom_nav-container">
+            <a class="navbar-brand" href="index.html">
+              <span>
+                <img src="images/logo.webp" alt="" />
+              </span>
+            </a>
 
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class=""> </span>
-          </button>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class=""> </span>
+            </button>
 
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav  mx-auto ">
-              <li class="nav-item active">
-                <a class="nav-link" href="index.html">الرئيسية <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="menu.html">المنتجات</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="about.html">عن اوردراتي</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="contact.html">اتصل بنا</a>
-              </li>
-            </ul>
-            <div class="user_option">
-              <a href="login.html" class="user_link">
-                <i class="fa fa-user" aria-hidden="true"></i>
-              </a>
-              <a class="cart_link">
-                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
-                  <g>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mx-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="index.html" data-i18n="nav.home"
+                    >الرئيسية</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="menu.html" data-i18n="nav.products"
+                    >المنتجات</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="about.html" data-i18n="nav.about"
+                    >عن اوردراتي</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    href="contact.html"
+                    data-i18n="nav.contact"
+                    >اتصل بنا</a
+                  >
+                </li>
+              </ul>
+              <div class="user_option">
+                <a href="login.html" class="user_link">
+                  <i class="fa fa-user" aria-hidden="true"></i>
+                </a>
+                <a class="cart_link">
+                  <svg
+                    version="1.1"
+                    id="Capa_1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    x="0px"
+                    y="0px"
+                    viewBox="0 0 456.029 456.029"
+                    style="enable-background: new 0 0 456.029 456.029"
+                    xml:space="preserve"
+                  >
                     <g>
-                      <path d="M345.6,338.862c-29.184,0-53.248,23.552-53.248,53.248c0,29.184,23.552,53.248,53.248,53.248
-                   c29.184,0,53.248-23.552,53.248-53.248C398.336,362.926,374.784,338.862,345.6,338.862z" />
+                      <g>
+                        <path
+                          d="M345.6,338.862c-29.184,0-53.248,23.552-53.248,53.248c0,29.184,23.552,53.248,53.248,53.248
+                       c29.184,0,53.248-23.552,53.248-53.248C398.336,362.926,374.784,338.862,345.6,338.862z"
+                        />
+                      </g>
                     </g>
-                  </g>
-                  <g>
                     <g>
-                      <path d="M439.296,84.91c-1.024,0-2.56-0.512-4.096-0.512H112.64l-5.12-34.304C104.448,27.566,84.992,10.67,61.952,10.67H20.48
-                   C9.216,10.67,0,19.886,0,31.15c0,11.264,9.216,20.48,20.48,20.48h41.472c2.56,0,4.608,2.048,5.12,4.608l31.744,216.064
-                   c4.096,27.136,27.648,47.616,55.296,47.616h212.992c26.624,0,49.664-18.944,55.296-45.056l33.28-166.4
-                   C457.728,97.71,450.56,86.958,439.296,84.91z" />
+                      <g>
+                        <path
+                          d="M439.296,84.91c-1.024,0-2.56-0.512-4.096-0.512H112.64l-5.12-34.304C104.448,27.566,84.992,10.67,61.952,10.67H20.48
+                       C9.216,10.67,0,19.886,0,31.15c0,11.264,9.216,20.48,20.48,20.48h41.472c2.56,0,4.608,2.048,5.12,4.608l31.744,216.064
+                       c4.096,27.136,27.648,47.616,55.296,47.616h212.992c26.624,0,49.664-18.944,55.296-45.056l33.28-166.4
+                       C457.728,97.71,450.56,86.958,439.296,84.91z"
+                        />
+                      </g>
                     </g>
-                  </g>
-                  <g>
                     <g>
-                      <path d="M215.04,389.55c-1.024-28.16-24.576-50.688-52.736-50.688c-29.696,1.536-52.224,26.112-51.2,55.296
-                   c1.024,28.16,24.064,50.688,52.224,50.688h1.024C193.536,443.31,216.576,418.734,215.04,389.55z" />
+                      <g>
+                        <path
+                          d="M215.04,389.55c-1.024-28.16-24.576-50.688-52.736-50.688c-29.696,1.536-52.224,26.112-51.2,55.296
+                       c1.024,28.16,24.064,50.688,52.224,50.688h1.024C193.536,443.31,216.576,418.734,215.04,389.55z"
+                        />
+                      </g>
                     </g>
-                  </g>
-                  <g>
-                  </g>
-                  <g>
-                  </g>
-                  <g>
-                  </g>
-                  <g>
-                  </g>
-                  <g>
-                  </g>
-                  <g>
-                  </g>
-                  <g>
-                  </g>
-                  <g>
-                  </g>
-                  <g>
-                  </g>
-                  <g>
-                  </g>
-                  <g>
-                  </g>
-                  <g>
-                  </g>
-                  <g>
-                  </g>
-                  <g>
-                  </g>
-                  <g>
-                  </g>
-                </svg>
-                <span id="cart-count">0</span>
-              </a>
-              <form class="form-inline">
-                <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
-                  <i class="fa fa-search" aria-hidden="true"></i>
-                </button>
-              </form>
-              <!-- <a href="" class="order_online">
-                الطلب أونلاين
-              </a> -->
-              <a href="branches.html" class="order_online">
-                اطلب اونلاين
-              </a>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                  </svg>
+                  <span id="cart-count">0</span>
+                </a>
+                <!-- dashboard popup -->
+                <div class="dashboard_box">
+                  <a href="#" class="dashboard_link" id="dashboardBtn">
+                    <i class="fa-solid fa-user-gear"></i>
+                    <span
+                      class="d-none d-md-inline-block ms-1"
+                      data-i18n="nav.dashboard"
+                      >لوحة التحكم</span
+                    >
+                  </a>
+
+                  <div class="dashboard_dropdown p-4" id="dashboardPopup">
+                    <div class="user-info-header">
+                      <span data-i18n="nav.welcome">مرحباً،</span>
+                      <span>Youssef</span>
+                    </div>
+
+                    <a href="orders.html" class="dash_item">
+                      <i class="fa-solid fa-bag-shopping"></i>
+                      <span data-i18n="nav.orders">الطلبات</span>
+                    </a>
+
+                    <a href="profile.html" class="dash_item">
+                      <i class="fa-regular fa-id-card"></i>
+                      <span data-i18n="nav.profile">بيانات العميل</span>
+                    </a>
+
+                    <div class="dash-divider"></div>
+
+                    <a href="#" class="dash_item logout">
+                      <i class="fa-solid fa-power-off"></i>
+                      <span data-i18n="nav.logout">خروج</span>
+                    </a>
+                  </div>
+                </div>
+
+                <!-- langs popup -->
+                <div class="lang_box">
+                  <a href="#" class="lang_link" id="langBtn">
+                    <i class="fa-solid fa-globe"></i>
+                  </a>
+
+                  <div class="lang_dropdown" id="langPopup">
+                    <a href="#" class="lang_item" data-lang="ar">
+                      <img src="images/egypt-flag.png" alt="AR" width="20" />
+                      <span data-i18n="lang.arabic"> العربية </span>
+                    </a>
+                    <a href="#" class="lang_item" data-lang="en">
+                      <img src="images/us-flag.png" alt="EN" width="20" />
+                      <span data-i18n="lang.english"> إنجليزية </span>
+                    </a>
+                  </div>
+                </div>
+                <form class="form-inline">
+                  <button class="btn my-2 my-sm-0 nav_search-btn" type="submit">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                  </button>
+                </form>
+                <!-- <a href="" class="order_online">
+                    الطلب أونلاين
+                  </a> -->
+                <a
+                  href="branches.html"
+                  class="order_online"
+                  data-i18n="nav.order_online"
+                >
+                  اطلب اونلاين
+                </a>
+              </div>
             </div>
-          </div>
-        </nav>
-      </div>
-    </header>
-</div>
+          </nav>
         </div>
+      </header>
+    </div>
 
     <section class="checkout_section layout_padding">
-        <div class="container checkout-container">
-            <div class="row">
-                <div class="col-lg-7">
-                    <div class="billing-details">
-                        <h3>تفاصيل الفاتورة</h3>
-                        <form id="checkout-form">
-                            <div class="form-row">
-                                <div class="form-group col-md-12">
-                                    <label for="checkout-name">الاسم بالكامل <span class="required">*</span></label>
-                                    <input type="text" class="form-control" id="checkout-name" required>
-                                </div>
-                                <div class="form-group col-md-12">
-                                    <label for="checkout-phone">رقم الهاتف <span class="required">*</span></label>
-                                    <input type="tel" class="form-control" id="checkout-phone" required>
-                                </div>
-                                <div class="form-group col-md-12">
-                                    <label for="checkout-address">العنوان بالتفصيل <span class="required">*</span></label>
-                                    <input type="text" class="form-control" id="checkout-address" placeholder="اسم الشارع، رقم المبنى، الدور، الشقة" required>
-                                </div>
-                                <div class="form-group col-md-12">
-                                    <label for="checkout-notes">ملاحظات الطلب (اختياري)</label>
-                                    <textarea class="form-control" id="checkout-notes" rows="3" placeholder="أضف أي ملاحظات خاصة بطلبك هنا..."></textarea>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+      <div class="container checkout-container">
+        <div class="row">
+          <div class="col-lg-7">
+            <div class="billing-details">
+              <h3 data-i18n="checkout.billing_title">تفاصيل الفاتورة</h3>
+              <form id="checkout-form">
+                <div class="form-row">
+                  <div class="form-group col-md-12">
+                    <label for="checkout-name" data-i18n="checkout.name_label"
+                      >الاسم بالكامل <span class="required">*</span></label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="checkout-name"
+                      required
+                    />
+                  </div>
+                  <div class="form-group col-md-12">
+                    <label for="checkout-phone" data-i18n="checkout.phone_label"
+                      >رقم الهاتف <span class="required">*</span></label
+                    >
+                    <input
+                      type="tel"
+                      class="form-control"
+                      id="checkout-phone"
+                      required
+                    />
+                  </div>
+                  <div class="form-group col-md-12">
+                    <label
+                      for="checkout-address"
+                      data-i18n="checkout.address_label"
+                      >العنوان بالتفصيل <span class="required">*</span></label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="checkout-address"
+                      data-i18n-ph="checkout.address_placeholder"
+                      placeholder="اسم الشارع، رقم المبنى، الدور، الشقة"
+                      required
+                    />
+                  </div>
+                  <div class="form-group col-md-12">
+                    <label for="checkout-notes" data-i18n="checkout.notes_label"
+                      >ملاحظات الطلب (اختياري)</label
+                    >
+                    <textarea
+                      class="form-control"
+                      id="checkout-notes"
+                      rows="3"
+                      data-i18n-ph="checkout.notes_placeholder"
+                      placeholder="أضف أي ملاحظات خاصة بطلبك هنا..."
+                    ></textarea>
+                  </div>
                 </div>
-
-                <div class="col-lg-5">
-                    <div class="order-summary">
-                        <h3>ملخص طلبك</h3>
-                        
-                        <div id="checkout-items-list">
-                            <div class="summary-item">
-                                <span>(1x) بيتزا لذيذة</span>
-                                <span>40.00 جنيه</span>
-                            </div>
-                        </div>
-
-                        <div class="summary-details">
-                            <div class="summary-item">
-                                <span>الإجمالي الفرعي</span>
-                                <span id="checkout-subtotal">0.00 جنيه</span>
-                            </div>
-                            <div class="summary-item">
-                                <span>رسوم التوصيل</span>
-                                <span id="checkout-delivery">15.00 جنيه</span>
-                            </div>
-                            <hr>
-                            <div class="summary-item total">
-                                <span>الإجمالي النهائي</span>
-                                <span id="checkout-total">0.00 جنيه</span>
-                            </div>
-                        </div>
-
-                        <div class="payment-method">
-                            <h4>اختر طريقة الدفع</h4>
-                            <div class="custom-control custom-radio">
-                                <input type="radio" id="cod" name="paymentMethod" class="custom-control-input" value="cod" checked>
-                                <label class="custom-control-label" for="cod">الدفع عند الاستلام</label>
-                            </div>
-                            <div class="custom-control custom-radio">
-                                <input type="radio" id="credit-card" name="paymentMethod" class="custom-control-input" value="card">
-                                <label class="custom-control-label" for="credit-card">الدفع أونلاين</label>
-                            </div>
-                        </div>
-
-                        <button type="submit" form="checkout-form" class="btn btn-warning btn-block btn-place-order">
-                            تأكيد الطلب
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <footer class="footer_section">
-        <div id="footer">
-                <div class="container">
-      <div class="row">
-        <div class="col-md-4 footer-col">
-          <div class="footer_contact">
-            <h4>
-              فروعنا
-            </h4>
-            <div class="contact_link_box">
-              <a href="">
-                <i class="fa fa-map-marker" aria-hidden="true"></i>
-                <span>
-                  Location
-                </span>
-              </a>
-              <a href="">
-                <i class="fa fa-phone" aria-hidden="true"></i>
-                <span>
-                  Call +01 1234567890
-                </span>
-              </a>
-              <a href="">
-                <i class="fa fa-envelope" aria-hidden="true"></i>
-                <span>
-                  demo@gmail.com
-                </span>
-              </a>
+              </form>
             </div>
           </div>
-        </div>
-        <div class="col-md-4 footer-col">
-          <div class="footer_detail">
-            <a href="" class="footer-logo">
-              <img src="images/logo.webp" alt="">
-            </a>
-            <p>
-              استكشف قائمة الطعام المتنوعة لدينا، التي تضم أشهى الأطباق الشامية من مشاوي ومقبلات وأطباق رئيسية وحلويات. نحن نحرص على استخدام أفضل المكونات لضمان تجربة طعام لا تُنسى
-            </p>
-            <div class="footer_social">
-              <a href="">
-                <i class="fa fa-facebook" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-twitter" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-linkedin" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-instagram" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-pinterest" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fas fa-home" aria-hidden="true"></i>
-              </a>
+
+          <div class="col-lg-5">
+            <div class="order-summary">
+              <h3 data-i18n="checkout.summary_title">ملخص طلبك</h3>
+
+              <div id="checkout-items-list">
+                <div class="summary-item">
+                  <span>(1x) بيتزا لذيذة</span>
+                  <span
+                    >40.00 <span data-i18n="checkout.currency">جنيه</span></span
+                  >
+                </div>
+              </div>
+
+              <div class="summary-details">
+                <div class="summary-item">
+                  <span data-i18n="checkout.subtotal">الإجمالي الفرعي</span>
+                  <span id="checkout-subtotal">0.00 جنيه</span>
+                </div>
+                <div class="summary-item">
+                  <span data-i18n="checkout.delivery_fees">رسوم التوصيل</span>
+                  <span id="checkout-delivery"
+                    >15.00 <span data-i18n="checkout.currency">جنيه</span></span
+                  >
+                </div>
+                <hr />
+                <div class="summary-item total">
+                  <span data-i18n="checkout.total">الإجمالي النهائي</span>
+                  <span id="checkout-total"
+                    >0.00 <span data-i18n="checkout.currency">جنيه</span></span
+                  >
+                </div>
+              </div>
+
+              <div class="payment-method">
+                <h4 data-i18n="checkout.payment_title">اختر طريقة الدفع</h4>
+                <div class="custom-control custom-radio">
+                  <input
+                    type="radio"
+                    id="cod"
+                    name="paymentMethod"
+                    class="custom-control-input"
+                    value="cod"
+                    checked
+                  />
+                  <label
+                    class="custom-control-label"
+                    for="cod"
+                    data-i18n="checkout.payment_cod"
+                    >الدفع عند الاستلام</label
+                  >
+                </div>
+                <div class="custom-control custom-radio">
+                  <input
+                    type="radio"
+                    id="credit-card"
+                    name="paymentMethod"
+                    class="custom-control-input"
+                    value="card"
+                  />
+                  <label
+                    class="custom-control-label"
+                    for="credit-card"
+                    data-i18n="checkout.payment_online"
+                    >الدفع أونلاين</label
+                  >
+                </div>
+              </div>
+
+              <button
+                type="submit"
+                form="checkout-form"
+                class="btn btn-warning btn-block btn-place-order"
+                data-i18n="checkout.confirm_btn"
+              >
+                تأكيد الطلب
+              </button>
             </div>
           </div>
-        </div>
-        <div class="col-md-4 footer-col">
-          <h4>
-            مواعيد العمل
-          </h4>
-          <p>
-            يوميا
-          </p>
-          <p>
-            10.00 Am -10.00 Pm
-          </p>
         </div>
       </div>
-      <div class="footer-info">
-        <p>
-          &copy; <span id="displayYear"></span> جميع الحقوق محفوظة
-          <a href="#">سلسلة مطاعم ابن الشام</a><br><br>
-          &copy; <span id="displayYear"></span> Powerd By
-          <a href="#" target="_blank">ISG</a>
-        </p>
+    </section>
+    <!-- footer section -->
+    <footer class="footer_section">
+      <div id="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4 footer-col">
+              <div class="footer_contact">
+                <h4 data-i18n="footer.contact_title">تواصل معنا</h4>
+                <div class="contact_link_box">
+                  <a href="">
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                    <span data-i18n="footer.address"
+                      >القاهرة، مصر - التجمع الخامس</span
+                    >
+                  </a>
+                  <a href="">
+                    <i class="fa fa-phone" aria-hidden="true"></i>
+                    <span>+20 123 456 7890</span>
+                  </a>
+                  <a href="">
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                    <span>support@ordraty.com</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 footer-col">
+              <div class="footer_detail">
+                <a href="index.html" class="footer-logo">
+                  <img src="images/logo.png" alt="أوردراتي" />
+                </a>
+                <p data-i18n="footer.about_text">
+                  وجهتكم الأولى لتسوق مستلزمات المنزل الطازجة والأصلية. نسعى
+                  لتوفير أفضل جودة بأسرع توصيل لباب منزلك.
+                </p>
+                <div class="footer_social">
+                  <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+                  <a href=""><i class="fa-brands fa-twitter"></i></a>
+                  <a href=""><i class="fa-brands fa-instagram"></i></a>
+                  <a href=""><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 footer-col">
+              <h4 data-i18n="footer.links_title">روابط سريعة</h4>
+              <ul class="footer-links list-unstyled">
+                <li><a href="index.html" data-i18n="nav.home">الرئيسية</a></li>
+                <li>
+                  <a href="menu.html" data-i18n="nav.products">المنتجات</a>
+                </li>
+                <li><a href="about.html" data-i18n="nav.about">من نحن</a></li>
+                <li>
+                  <a href="book.html" data-i18n="nav.contact">اتصل بنا</a>
+                </li>
+              </ul>
+
+              <h4 class="mt-4" data-i18n="footer.working_hours_title">
+                مواعيد العمل
+              </h4>
+              <p data-i18n="footer.working_hours_val">
+                يومياً: 9:00 ص - 11:00 م
+              </p>
+            </div>
+          </div>
+
+          <div class="footer-info">
+            <p>
+              &copy; <span id="displayYear"></span>
+              <span data-i18n="footer.copy_rights"> جميع الحقوق محفوظة لـ</span>
+              <a href="#" data-i18n="footer.brand_name">أوردراتي</a>
+            </p>
+            <p class="small-text">
+              Powered By <a href="#" target="_blank">ISG</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!--end footer section -->
+    <!-- cart popup -->
+    <div id="cartPopup">
+      <div id="cart-popup" class="cart-popup-overlay">
+        <div class="cart-popup-content">
+          <div class="cart-header">
+            <h3 data-i18n="cart.title">عربة التسوق</h3>
+          </div>
+          <span class="cart-close-btn">&times;</span>
+          <div class="cart-items-container">
+            <div class="cart-item">
+              <img src="images/f1.png" alt="Product Image" />
+              <div class="item-details">
+                <p class="item-name">بيتزا لذيذة</p>
+                <p class="item-price">40.00 جنيه</p>
+                <div class="item-quantity">
+                  <input type="number" value="1" min="1" />
+                  <button class="remove-btn" data-i18n="cart.remove">
+                    إزالة
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cart-summary">
+            <p data-i18n="cart.subtotal">الإجمالي الفرعي:</p>
+            <p class="subtotal">0.00</p>
+            <span data-i18n="cart.currency">جنيه</span>
+          </div>
+          <div class="cart-actions">
+            <a
+              href="cart.html"
+              class="btn checkout-btn"
+              data-i18n="cart.checkout"
+              >إتمام الطلب</a
+            >
+            <button class="btn continue-shopping" data-i18n="cart.continue">
+              متابعة التسوق
+            </button>
+          </div>
+        </div>
       </div>
     </div>
-        </div>
-    </footer>
     <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="js/custom.js"></script>
-</body>
+    <script src="./js/main.js"></script>
+    <script src="./js/cartPopuo.js"></script>
+    <script src="./js/checkout.js"></script>
+    <script src="./js/langs.js"></script>
+  </body>
 </html>

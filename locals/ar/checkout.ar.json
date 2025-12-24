@@ -1,0 +1,18 @@
+{
+  "checkout.billing_title": "تفاصيل الفاتورة",
+  "checkout.name_label": "الاسم بالكامل",
+  "checkout.phone_label": "رقم الهاتف",
+  "checkout.address_label": "العنوان بالتفصيل",
+  "checkout.address_placeholder": "اسم الشارع، رقم المبنى، الدور، الشقة",
+  "checkout.notes_label": "ملاحظات الطلب (اختياري)",
+  "checkout.notes_placeholder": "أضف أي ملاحظات خاصة بطلبك هنا...",
+  "checkout.summary_title": "ملخص طلبك",
+  "checkout.subtotal": "الإجمالي الفرعي",
+  "checkout.delivery_fees": "رسوم التوصيل",
+  "checkout.total": "الإجمالي النهائي",
+  "checkout.payment_title": "اختر طريقة الدفع",
+  "checkout.payment_cod": "الدفع عند الاستلام",
+  "checkout.payment_online": "الدفع أونلاين",
+  "checkout.confirm_btn": "تأكيد الطلب",
+  "checkout.currency": "جنيه"
+}

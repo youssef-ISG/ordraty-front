@@ -1,0 +1,112 @@
+.footer_section {
+    background-color: #112D4E;
+    color: #ffffff;
+    padding-top: 60px;
+    position: relative;
+}
+.footer-col {
+    margin-bottom: 30px;
+}
+.footer_section h4 {
+    color: #DB2D2E;
+    font-weight: bold;
+    margin-bottom: 25px;
+    font-size: 1.4rem;
+    position: relative;
+    padding-bottom: 10px;
+}
+/* .footer_section h4::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100px;
+    height: 3px;
+    background-color: #DB2D2E;
+} */
+.contact_link_box a {
+    display: flex;
+    align-items: center;
+    color: #dbdbdb;
+    margin-bottom: 15px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.contact_link_box a i {
+    color: #DB2D2E;
+    margin-left: 15px;
+    font-size: 1.2rem;
+    width: 25px;
+    text-align: center;
+}
+.contact_link_box a:hover {
+    color: #DB2D2E;
+    transform: translateX(-5px);
+}
+.footer-logo img {
+    max-width: 180px;
+    margin-bottom: 20px;
+}
+.footer_detail p {
+    color: #dbdbdb;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+.footer_social {
+    display: flex;
+    gap: 15px;
+}
+
+.footer_social a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #fff;
+    color: #112D4E;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+    text-decoration: none;
+}
+
+.footer_social a:hover {
+    background-color: #DB2D2E;
+    color: #fff;
+    transform: translateY(-3px);
+}
+.footer-links li {
+    margin-bottom: 10px;
+}
+.footer-links a {
+    color: #dbdbdb;
+    text-decoration: none;
+    transition: 0.3s;
+    display: inline-block;
+}
+.footer-links a:hover {
+    color: #DB2D2E;
+    padding-right: 5px;
+}
+.footer-info {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 25px 0;
+    text-align: center;
+    margin-top: 20px;
+}
+.footer-info p {
+    margin: 0;
+    color: #dbdbdb;
+}
+
+.footer-info a {
+    color: #DB2D2E;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.footer-info .small-text {
+    font-size: 0.85rem;
+    margin-top: 5px;
+    opacity: 0.7;
+}

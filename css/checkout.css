@@ -1,0 +1,183 @@
+/* --- تطوير صفحة إتمام الطلب (Modern Premium Checkout) --- */
+
+.checkout_section {
+  background-color: #f8fafc; /* خلفية هادئة جداً للمساعدة في التركيز */
+  padding: 60px 0;
+}
+
+/* 1. الحاويات الأساسية (Cards) */
+.checkout-container .billing-details,
+.checkout-container .order-summary {
+  background-color: #ffffff;
+  padding: 35px;
+  border-radius: 24px; /* زوايا دائرية عصرية */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+  border: 1px solid #f1f5f9;
+}
+
+.billing-details h3,
+.order-summary h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #1e293b;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #f1f5f9;
+  padding-bottom: 15px;
+  position: relative;
+}
+
+.billing-details h3::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  right: 0;
+  width: 60px;
+  height: 2px;
+  background-color: #db2d2e;
+}
+
+/* 2. تحسين عناصر الإدخال (Form Controls) */
+.billing-details .form-group label {
+  font-weight: 700;
+  color: #475569;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+}
+
+.billing-details .form-control {
+  border-radius: 12px;
+  padding: 15px 20px;
+  border: 1.5px solid #e2e8f0;
+  background-color: #fcfdfe;
+  height: auto;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.billing-details .form-control:focus {
+  background-color: #ffffff;
+  border-color: #db2d2e;
+  box-shadow: 0 0 0 4px rgba(219, 45, 46, 0.1);
+  outline: none;
+}
+
+.notes-area {
+  resize: none;
+}
+
+/* 3. ملخص الطلب (Order Summary) */
+.order-summary #checkout-items-list {
+  margin-bottom: 25px;
+  max-height: 350px;
+  overflow-y: auto;
+  padding-right: 5px;
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #f8fafc;
+}
+
+.summary-item span:first-child {
+  color: #64748b;
+  font-weight: 500;
+}
+
+.summary-item span:last-child {
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.summary-details {
+  background: #f8fafc;
+  padding: 20px;
+  border-radius: 16px;
+  margin-top: 20px;
+}
+
+.summary-item.total {
+  margin-top: 10px;
+  padding-top: 15px;
+  border-top: 2px dashed #cbd5e1;
+}
+
+.summary-item.total span {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #db2d2e !important;
+}
+
+/* 4. خيارات الدفع (Payment Methods) */
+.payment-method {
+  margin-top: 30px;
+}
+
+.payment-method h4 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.custom-control.custom-radio {
+  background: #fff;
+  border: 1.5px solid #e2e8f0;
+  padding: 15px 45px 15px 15px !important;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.custom-control.custom-radio:hover {
+  border-color: #db2d2e;
+  background: #fff9f9;
+}
+
+/* إخفاء دائرة الراديو القديمة وتنسيق الجديدة */
+.custom-control-input:checked ~ .custom-control-label::before {
+  background-color: #db2d2e;
+  border-color: #db2d2e;
+}
+
+/* 5. زر التأكيد النهائي */
+.btn-place-order {
+  width: 100%;
+  padding: 18px;
+  border-radius: 16px;
+  font-size: 1.2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #db2d2e, #ef4444);
+  border: none;
+  box-shadow: 0 10px 25px rgba(219, 45, 46, 0.3);
+  margin-top: 20px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.btn-place-order:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(219, 45, 46, 0.4);
+  background: #112d4e; /* يتحول للكحلي الفخم عند الهوفر */
+  color: #fff;
+}
+
+/* سكرول بار مخصص للملخص */
+#checkout-items-list::-webkit-scrollbar {
+  width: 5px;
+}
+#checkout-items-list::-webkit-scrollbar-thumb {
+  background: #e2e8f0;
+  border-radius: 10px;
+}
+
+/* تجاوب */
+@media (max-width: 991px) {
+  .checkout_section {
+    padding: 30px 0;
+  }
+  .checkout-container .order-summary {
+    margin-top: 30px;
+  }
+}

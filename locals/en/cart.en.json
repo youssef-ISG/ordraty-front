@@ -1,0 +1,15 @@
+{
+  "cart.page_title": "Your Shopping Cart",
+  "cart.table_product": "Product",
+  "cart.table_price": "Price",
+  "cart.table_quantity": "Quantity",
+  "cart.table_total": "Total",
+  "cart.table_remove": "Remove",
+  "cart.remove_btn": "Remove",
+  "cart.subtotal_label": "Subtotal:",
+  "cart.total_label": "Grand Total:",
+  "cart.checkout_btn": "Proceed to Checkout",
+  "cart.continue_btn": "Continue Shopping",
+  "cart.empty_message": "Your cart is currently empty.",
+  "cart.currency": "EGP"
+}

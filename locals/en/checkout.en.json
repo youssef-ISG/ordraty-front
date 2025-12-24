@@ -1,0 +1,18 @@
+{
+  "checkout.billing_title": "Billing Details",
+  "checkout.name_label": "Full Name",
+  "checkout.phone_label": "Phone Number",
+  "checkout.address_label": "Detailed Address",
+  "checkout.address_placeholder": "Street name, building no, floor, apartment",
+  "checkout.notes_label": "Order Notes (Optional)",
+  "checkout.notes_placeholder": "Add any special notes for your order here...",
+  "checkout.summary_title": "Your Order Summary",
+  "checkout.subtotal": "Subtotal",
+  "checkout.delivery_fees": "Delivery Fees",
+  "checkout.total": "Grand Total",
+  "checkout.payment_title": "Select Payment Method",
+  "checkout.payment_cod": "Cash on Delivery",
+  "checkout.payment_online": "Online Payment",
+  "checkout.confirm_btn": "Confirm Order",
+  "checkout.currency": "EGP"
+}

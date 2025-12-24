@@ -1,0 +1,10 @@
+{
+    "branches.title": "Choose the Nearest Branch",
+  "branches.sub_title": "We cover most areas to serve you faster",
+  "branches.status_open": "Open",
+  "branches.status_closed": "Closed",
+  "branches.order_here": "Order Here",
+  "branches.currently_closed": "Currently Closed",
+    "branches.am": "AM",
+  "branches.pm": "PM"
+}
