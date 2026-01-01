@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>تفاصيل الطلب - أوردراتي</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="./css/common/common.css" />
+    <link rel="stylesheet" href="./css/common/header.css" />
+    <link rel="stylesheet" href="./css/common/footer-section.css" />
+    <link rel="stylesheet" href="./css/common/cart-popup.css" />
+
+    <link href="./css/common/all.min.css" rel="stylesheet" />
+
+    <link href="css/addRate.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div id="header">
+      <header class="header_section">
+        <div class="container">
+          <nav class="navbar navbar-expand-lg custom_nav-container">
+            <a class="navbar-brand" href="index.html">
+              <span>
+                <img src="images/logo.webp" alt="" />
+              </span>
+            </a>
+
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class=""> </span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mx-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="index.html" data-i18n="nav.home"
+                    >الرئيسية</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="menu.html" data-i18n="nav.products"
+                    >المنتجات</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="about.html" data-i18n="nav.about"
+                    >عن اوردراتي</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    href="contact.html"
+                    data-i18n="nav.contact"
+                    >اتصل بنا</a
+                  >
+                </li>
+              </ul>
+              <div class="user_option">
+                <a href="login.html" class="user_link">
+                  <i class="fa fa-user" aria-hidden="true"></i>
+                </a>
+                <a class="cart_link">
+                  <svg
+                    version="1.1"
+                    id="Capa_1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    x="0px"
+                    y="0px"
+                    viewBox="0 0 456.029 456.029"
+                    style="enable-background: new 0 0 456.029 456.029"
+                    xml:space="preserve"
+                  >
+                    <g>
+                      <g>
+                        <path
+                          d="M345.6,338.862c-29.184,0-53.248,23.552-53.248,53.248c0,29.184,23.552,53.248,53.248,53.248
+                       c29.184,0,53.248-23.552,53.248-53.248C398.336,362.926,374.784,338.862,345.6,338.862z"
+                        />
+                      </g>
+                    </g>
+                    <g>
+                      <g>
+                        <path
+                          d="M439.296,84.91c-1.024,0-2.56-0.512-4.096-0.512H112.64l-5.12-34.304C104.448,27.566,84.992,10.67,61.952,10.67H20.48
+                       C9.216,10.67,0,19.886,0,31.15c0,11.264,9.216,20.48,20.48,20.48h41.472c2.56,0,4.608,2.048,5.12,4.608l31.744,216.064
+                       c4.096,27.136,27.648,47.616,55.296,47.616h212.992c26.624,0,49.664-18.944,55.296-45.056l33.28-166.4
+                       C457.728,97.71,450.56,86.958,439.296,84.91z"
+                        />
+                      </g>
+                    </g>
+                    <g>
+                      <g>
+                        <path
+                          d="M215.04,389.55c-1.024-28.16-24.576-50.688-52.736-50.688c-29.696,1.536-52.224,26.112-51.2,55.296
+                       c1.024,28.16,24.064,50.688,52.224,50.688h1.024C193.536,443.31,216.576,418.734,215.04,389.55z"
+                        />
+                      </g>
+                    </g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                  </svg>
+                  <span id="cart-count">0</span>
+                </a>
+                <!-- dashboard popup -->
+                <div class="dashboard_box">
+                  <a href="#" class="dashboard_link" id="dashboardBtn">
+                    <i class="fa-solid fa-user-gear"></i>
+                    <span
+                      class="d-none d-md-inline-block ms-1"
+                      data-i18n="nav.dashboard"
+                      >لوحة التحكم</span
+                    >
+                  </a>
+
+                  <div class="dashboard_dropdown p-4" id="dashboardPopup">
+                    <div class="user-info-header">
+                      <span data-i18n="nav.welcome">مرحباً،</span>
+                      <span>Youssef</span>
+                    </div>
+
+                    <a href="orders.html" class="dash_item">
+                      <i class="fa-solid fa-bag-shopping"></i>
+                      <span data-i18n="nav.orders">الطلبات</span>
+                    </a>
+
+                    <a href="profile.html" class="dash_item">
+                      <i class="fa-regular fa-id-card"></i>
+                      <span data-i18n="nav.profile">بيانات العميل</span>
+                    </a>
+
+                    <div class="dash-divider"></div>
+
+                    <a href="#" class="dash_item logout">
+                      <i class="fa-solid fa-power-off"></i>
+                      <span data-i18n="nav.logout">خروج</span>
+                    </a>
+                  </div>
+                </div>
+
+                <!-- langs popup -->
+                <div class="lang_box">
+                  <a href="#" class="lang_link" id="langBtn">
+                    <i class="fa-solid fa-globe"></i>
+                  </a>
+
+                  <div class="lang_dropdown" id="langPopup">
+                    <a href="#" class="lang_item" data-lang="ar">
+                      <img src="images/egypt-flag.png" alt="AR" width="20" />
+                      <span data-i18n="lang.arabic"> العربية </span>
+                    </a>
+                    <a href="#" class="lang_item" data-lang="en">
+                      <img src="images/us-flag.png" alt="EN" width="20" />
+                      <span data-i18n="lang.english"> إنجليزية </span>
+                    </a>
+                  </div>
+                </div>
+                <form class="form-inline">
+                  <button class="btn my-2 my-sm-0 nav_search-btn" type="submit">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                  </button>
+                </form>
+                <!-- <a href="" class="order_online">
+                    الطلب أونلاين
+                  </a> -->
+                <a
+                  href="branches.html"
+                  class="order_online"
+                  data-i18n="nav.order_online"
+                >
+                  اطلب اونلاين
+                </a>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </header>
+    </div>
+
+<section class="rating_section py-5">
+    <div class="container">
+        <div class="rating-card shadow-sm border-0 rounded-lg overflow-hidden">
+            <div class="row no-gutters">
+                
+                <div class="col-lg-4 bg-light p-4 text-center border-left">
+                    <div class="rating-summary h-100 d-flex flex-column justify-content-center align-items-center">
+                        <h4 class="text-navy font-weight-bold mb-3">تقييمات العملاء</h4>
+                        
+                        <div class="display-box mb-3">
+                            <span class="average-score display-3 font-weight-bold text-danger">3.7</span>
+                            <span class="total-score text-muted">/ 5</span>
+                        </div>
+
+                        <div class="stars-display mb-2">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star-half-alt text-warning"></i>
+                            <i class="far fa-star text-warning"></i>
+                        </div>
+
+                        <p class="text-secondary small">إجمالي التقاييم: <strong>10</strong></p>
+                        
+                        <hr class="w-75">
+                        
+                        <div class="brand-logo mt-3">
+                            <img src="{{ asset('images/logo.webp') }}" alt="Logo" width="100" class="opacity-75">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-8 bg-white p-4 p-md-5">
+                    <div class="form-header mb-4 text-right">
+                        <h3 class="text-navy font-weight-bold">شاركنا رأيك</h3>
+                        <p class="text-muted">يسعدنا سماع تجربتك لتطوير خدماتنا بشكل مستمر.</p>
+                    </div>
+
+                    <form action="#" method="POST" id="mainRatingForm">
+                        <div class="rating-selector mb-5">
+                            <h6 class="mb-3 text-dark font-weight-bold">ما هو تقييمك العام؟</h6>
+                            <div class="star-rating-input">
+                                <input type="radio" name="rating" id="star5" value="5"><label for="star5"></label>
+                                <input type="radio" name="rating" id="star4" value="4"><label for="star4"></label>
+                                <input type="radio" name="rating" id="star3" value="3"><label for="star3"></label>
+                                <input type="radio" name="rating" id="star2" value="2"><label for="star2"></label>
+                                <input type="radio" name="rating" id="star1" value="1"><label for="star1"></label>
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-4 text-right">
+                            <label class="text-dark font-weight-bold">اكتب مراجعتك (اختياري)</label>
+                            <textarea name="comment" rows="4" class="form-control creative-textarea shadow-none" placeholder="كيف كانت الجودة؟ سرعة التوصيل؟ طزاجة المنتجات؟"></textarea>
+                        </div>
+
+                        <div class="form-actions mt-5">
+                            <button type="submit" class="btn btn-navy-confirm px-5 py-3 rounded-pill shadow-sm">
+                                <i class="fas fa-check-circle ml-2"></i>
+                                حفظ التقييم ونشره
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- footer section -->
+    <footer class="footer_section">
+      <div id="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4 footer-col">
+              <div class="footer_contact">
+                <h4 data-i18n="footer.contact_title">تواصل معنا</h4>
+                <div class="contact_link_box">
+                  <a href="">
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                    <span data-i18n="footer.address"
+                      >القاهرة، مصر - التجمع الخامس</span
+                    >
+                  </a>
+                  <a href="">
+                    <i class="fa fa-phone" aria-hidden="true"></i>
+                    <span>+20 123 456 7890</span>
+                  </a>
+                  <a href="">
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                    <span>support@ordraty.com</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 footer-col">
+              <div class="footer_detail">
+                <a href="index.html" class="footer-logo">
+                  <img src="images/logo.webp" alt="أوردراتي" />
+                </a>
+                <p data-i18n="footer.about_text">
+                  وجهتكم الأولى لتسوق مستلزمات المنزل الطازجة والأصلية. نسعى
+                  لتوفير أفضل جودة بأسرع توصيل لباب منزلك.
+                </p>
+                <div class="footer_social">
+                  <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+                  <a href=""><i class="fa-brands fa-twitter"></i></a>
+                  <a href=""><i class="fa-brands fa-instagram"></i></a>
+                  <a href=""><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 footer-col">
+              <h4 data-i18n="footer.links_title">روابط سريعة</h4>
+              <ul class="footer-links list-unstyled">
+                <li><a href="index.html" data-i18n="nav.home">الرئيسية</a></li>
+                <li>
+                  <a href="menu.html" data-i18n="nav.products">المنتجات</a>
+                </li>
+                <li><a href="about.html" data-i18n="nav.about">من نحن</a></li>
+                <li>
+                  <a href="book.html" data-i18n="nav.contact">اتصل بنا</a>
+                </li>
+              </ul>
+
+              <h4 class="mt-4" data-i18n="footer.working_hours_title">
+                مواعيد العمل
+              </h4>
+              <p data-i18n="footer.working_hours_val">
+                يومياً: 9:00 ص - 11:00 م
+              </p>
+            </div>
+          </div>
+
+          <div class="footer-info">
+            <p>
+              &copy; <span id="displayYear"></span>
+              <span data-i18n="footer.copy_rights"> جميع الحقوق محفوظة لـ</span>
+              <a href="#" data-i18n="footer.brand_name">أوردراتي</a>
+            </p>
+            <p class="small-text">
+              Powered By <a href="#" target="_blank">ISG</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!--end footer section -->
+    <!-- cart popup -->
+    <div id="cartPopup">
+      <div id="cart-popup" class="cart-popup-overlay">
+        <div class="cart-popup-content">
+          <div class="cart-header">
+            <h3 data-i18n="cart.title">عربة التسوق</h3>
+          </div>
+          <span class="cart-close-btn">&times;</span>
+          <div class="cart-items-container">
+            <div class="cart-item">
+              <img src="images/f1.png" alt="Product Image" />
+              <div class="item-details">
+                <p class="item-name">بيتزا لذيذة</p>
+                <p class="item-price">40.00 جنيه</p>
+                <div class="item-quantity">
+                  <input type="number" value="1" min="1" />
+                  <button class="remove-btn" data-i18n="cart.remove">
+                    إزالة
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cart-summary">
+            <p data-i18n="cart.subtotal">الإجمالي الفرعي:</p>
+            <p class="subtotal">0.00</p>
+            <span data-i18n="cart.currency">جنيه</span>
+          </div>
+          <div class="cart-actions">
+            <a
+              href="cart.html"
+              class="btn checkout-btn"
+              data-i18n="cart.checkout"
+              >إتمام الطلب</a
+            >
+            <button class="btn continue-shopping" data-i18n="cart.continue">
+              متابعة التسوق
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/cartPopuo.js"></script>
+    <script src="./js/langs.js"></script>
+    <script src="./js/orderForm.js"></script>
+  </body>
+</html>

@@ -1,0 +1,78 @@
+/* الألوان الأساسية لهوية أوردراتي */
+.text-navy {
+  color: #112d4e;
+}
+.bg-navy {
+  background-color: #112d4e;
+}
+
+.rating-card {
+  border-radius: 20px !important;
+  background: #fff;
+  border: 1px solid #edf2f7;
+}
+
+/* نظام النجوم التفاعلي (Star Rating Input) */
+.star-rating-input {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+.star-rating-input input {
+  display: none;
+}
+
+.star-rating-input label {
+  cursor: pointer;
+  width: 45px;
+  height: 45px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23cbd5e0' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolygon points='12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2'%3E%3C/polygon%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 35px;
+  transition: 0.2s ease-in-out;
+}
+
+.star-rating-input input:checked ~ label,
+.star-rating-input label:hover,
+.star-rating-input label:hover ~ label {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffc107' stroke='%23ffc107' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolygon points='12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2'%3E%3C/polygon%3E%3C/svg%3E");
+}
+
+/* تحسين حقل النص */
+.creative-textarea {
+  border-radius: 15px;
+  border: 2px solid #f1f5f9;
+  padding: 15px;
+  background-color: #fcfdfe;
+  transition: 0.3s;
+}
+
+.creative-textarea:focus {
+  border-color: #db2d2e;
+  background-color: #fff;
+}
+
+/* زر التأكيد */
+.btn-navy-confirm {
+  background-color: #112d4e;
+  color: #fff;
+  font-weight: 700;
+  border: none;
+  letter-spacing: 0.5px;
+  transition: 0.4s;
+}
+
+.btn-navy-confirm:hover {
+  background-color: #db2d2e;
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+/* تحسينات الموبايل */
+@media (max-width: 991px) {
+  .border-left {
+    border-left: none !important;
+  }
+}
