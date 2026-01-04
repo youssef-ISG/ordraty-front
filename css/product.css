@@ -604,3 +604,50 @@ body.modal-open {
     padding-bottom: 20px;
   }
 }
+
+/* تنسيق بادج نفذت الكمية */
+.out-of-stock-badge {
+  position: absolute;
+  top: 40%; /* وضعناه في منتصف منطقة الصورة تقريباً */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.75); /* لون أسود نصف شفاف */
+  color: #fff;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  z-index: 10;
+  white-space: nowrap;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+}
+.product-card.out-of-stock .discount-badge {
+  display: none;
+}
+
+.product-card.out-of-stock .image-wrapper img {
+  filter: grayscale(100%);
+  opacity: 0.6;
+}
+.product-card.out-of-stock .add-to-cart-btn {
+  background-color: #e0e0e0;
+  color: #999;
+  cursor: not-allowed;
+  box-shadow: none;
+  pointer-events: none;
+}
+.product-card.out-of-stock .add-to-cart-btn:hover {
+  background-color: #e0e0e0;
+  box-shadow: none;
+}
+.product-card.out-of-stock:hover {
+  transform: none;
+  border-color: #f3f3f3 !important;
+}
+
+.unit-badge {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10b981; 
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}

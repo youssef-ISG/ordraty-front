@@ -20,14 +20,14 @@
     />
     <link rel="stylesheet" href="./css/common/common.css" />
     <link rel="stylesheet" href="./css/common/header.css" />
-    <link rel="stylesheet" href="./css/common/cart-popup.css">
-    <link rel="stylesheet" href="./css/common/footer-section.css">
+    <link rel="stylesheet" href="./css/common/cart-popup.css" />
+    <link rel="stylesheet" href="./css/common/footer-section.css" />
     <!-- font awesome style -->
     <link href="./css/common/all.min.css" rel="stylesheet" />
 
     <!-- Custom styles for this template -->
-   <!-- <link href="css/rtl.css" rel="stylesheet" /> -->
-    <link rel="stylesheet" href="css/product.css">
+    <!-- <link href="css/rtl.css" rel="stylesheet" /> -->
+    <link rel="stylesheet" href="css/product.css" />
   </head>
 
   <body id="menu-page" class="sub_page">
@@ -229,7 +229,11 @@
             <div
               class="sidebar-mobile-header d-md-none d-flex justify-content-between align-items-center mb-4 pb-3 border-bottom"
             >
-              <h5 class="m-0 fw-bold" style="color: var(--main-navy)" data-i18n="products.filter_title">
+              <h5
+                class="m-0 fw-bold"
+                style="color: var(--main-navy)"
+                data-i18n="products.filter_title"
+              >
                 تصفية النتائج
               </h5>
               <button
@@ -246,13 +250,20 @@
                 id="collapseCategory"
                 class="d-flex justify-content-between align-items-center section-header cursor-pointer"
               >
-                <h3 class="fs-5 fw-bold mb-0" data-i18n="products.categories_title">التصنيفات</h3>
+                <h3
+                  class="fs-5 fw-bold mb-0"
+                  data-i18n="products.categories_title"
+                >
+                  التصنيفات
+                </h3>
                 <i class="fa-solid fa-angle-up main-arrow"></i>
               </div>
 
               <ul class="category-list mt-3">
                 <li class="category-item active">
-                  <a href="#" data-i18n="products.all_categories">جميع التصنيفات</a>
+                  <a href="#" data-i18n="products.all_categories"
+                    >جميع التصنيفات</a
+                  >
                 </li>
 
                 <li class="has-child">
@@ -289,12 +300,16 @@
                 id="collapseBrand"
                 class="d-flex justify-content-between align-items-center section-header cursor-pointer"
               >
-                <h3 class="fs-5 fw-bold mb-0" data-i18n="products.brands_title">العلامة التجارية</h3>
+                <h3 class="fs-5 fw-bold mb-0" data-i18n="products.brands_title">
+                  العلامة التجارية
+                </h3>
                 <i class="fa-solid fa-angle-up main-arrow"></i>
               </div>
               <ul class="brand-list mt-3">
-                <li class="brand-item active"><a href="#" data-i18n="products.brand_all">الكل</a></li>
-                <li class="brand-item"><a href="#" >روابي</a></li>
+                <li class="brand-item active">
+                  <a href="#" data-i18n="products.brand_all">الكل</a>
+                </li>
+                <li class="brand-item"><a href="#">روابي</a></li>
                 <li class="brand-item"><a href="#">الضحى</a></li>
                 <li class="brand-item"><a href="#">جهينة</a></li>
               </ul>
@@ -306,10 +321,16 @@
               class="products-header d-flex flex-wrap justify-content-between align-items-center mb-4 pb-3"
             >
               <div class="breadcrumb">
-                <div><a href="index.html" data-i18n="products.breadcrumb_home">الرئيسية</a></div>
+                <div>
+                  <a href="index.html" data-i18n="products.breadcrumb_home"
+                    >الرئيسية</a
+                  >
+                </div>
                 <i class="fa-solid fa-angle-right m-1"></i>
                 <div class="active breadcrumb-active">
-                  <a href="#" data-i18n="products.all_categories">جميع التصنيفات</a>
+                  <a href="#" data-i18n="products.all_categories"
+                    >جميع التصنيفات</a
+                  >
                 </div>
               </div>
               <div class="filter-sidebar">
@@ -317,14 +338,19 @@
                   id="filterSidebarToggle"
                   class="btn btn-outline-secondary d-md-none"
                 >
-                  <i class="fa-solid fa-filter"></i> <span data-i18n="products.filter_btn">تصفية</span>
+                  <i class="fa-solid fa-filter"></i>
+                  <span data-i18n="products.filter_btn">تصفية</span>
                 </button>
               </div>
               <div class="sort-options position-relative">
                 <select class="">
                   <option data-i18n="products.sort_by">ترتيب حسب</option>
-                  <option data-i18n="products.sort_low_price">الأقل سعراً</option>
-                  <option data-i18n="products.sort_high_price">الأكثر سعراً</option>
+                  <option data-i18n="products.sort_low_price">
+                    الأقل سعراً
+                  </option>
+                  <option data-i18n="products.sort_high_price">
+                    الأكثر سعراً
+                  </option>
                   <option data-i18n="products.sort_newest">الاحدث</option>
                   <option data-i18n="products.sort_oldest">الاقدم</option>
                 </select>
@@ -333,7 +359,9 @@
 
             <div class="products d-flex p-3 flex-wrap">
               <div class="product-card position-relative border">
-                <span class="discount-badge p-1">20% <span data-i18n="products.discount">خصم</span></span>
+                <span class="discount-badge p-1"
+                  >20% <span data-i18n="products.discount">خصم</span></span
+                >
                 <span class="favorite-icon"
                   ><i class="fa-regular fa-heart"></i
                 ></span>
@@ -349,7 +377,10 @@
                 </div>
 
                 <div class="prices">
-                  <span class="final-price">60 - 280 <span data-i18n="products.currency">جنيه</span></span>
+                  <span class="final-price"
+                    >60 - 280
+                    <span data-i18n="products.currency">جنيه</span></span
+                  >
                 </div>
 
                 <div class="rating">
@@ -359,15 +390,65 @@
                   <span data-value="2">★</span>
                   <span data-value="1">★</span>
                 </div>
-
-                <button data-i18n="products.add_to_cart" class="add-to-cart-btn" data-id="201" data-name="أرز
-                بسمتي فاخر" data-price="60" /* هذا السعر سيتم تجاهله عند فتح
-                المودال لأننا نعتمد على الـ variants */
-                data-image="images/p2.jpg" data-category="حبوب وبقوليات"
-                data-brand="الضحى" data-description="أرز بسمتي هندي طويل الحبة، درجة أولى." data-variants='[ {"id": "201-1KG", "name": "1 كيلو","price": 60, "old_price": 70}, {"id": "201-5KG", "name": "5 كيلو", "price": 280, "old_price": 300} ]'> أضف إلى السلة </button>
+                <button
+                  class="add-to-cart-btn"
+                  data-id="201"
+                  data-name="أرز بسمتي فاخر"
+                  data-price="60"
+                  data-gallery="images/p2.jpg,images/p2-back.jpg,images/p2-cooking.jpg"
+                  data-unit="1 كيلو"
+                  data-variants='[
+          {
+              "id": "201-1KG", 
+              "name": "1 كيلو",
+              "unit":"1 كيلو",
+              "full_title": "أرز بسمتي فاخر - كيس 1 كيلو",
+              "price": 60, 
+              "old_price": 70,
+              "description": "كيس 1 كيلو للاستخدام اليومي السريع.",
+              "images": [
+                  "images/p2.jpg", 
+                  "images/p2-back.jpg", 
+                  "images/p2-cooking.jpg"
+              ]
+          },
+          {
+              "id": "201-5KG", 
+              "name": "5 كيلو", 
+              "unit":"5 كيلو",
+              "full_title": "أرز بسمتي فاخر - عبوة عائلية 5 كيلو",
+              "price": 280, 
+              "old_price": 300,
+              "description": "عبوة بلاستيكية مقواة 5 كيلو، توفير للعائلة.",
+              "images": [
+                  "images/p2-package.jpg", 
+                  "images/p3.jpg", 
+                  "images/p2-cooking.jpg"
+              ]
+          },
+          {
+              "id": "201-10KG", 
+              "name": "10 كيلو", 
+              "unit":"10 كيلو",
+              "full_title": "أرز بسمتي فاخر - شيكارة 10 كيلو",
+              "price": 550, 
+              "old_price": 600,
+              "description": "شيكارة خيش أصلية 10 كيلو للمطاعم والعزائم.",
+              "images": [
+                  "images/p2-cooking.jpg", 
+                  "images/p2-package.jpg"
+              ]
+          }
+      ]'
+                >
+                  أضف إلى السلة
+                </button>
               </div>
               <div class="product-card position-relative border">
-                <span class="discount-badge p-1">15% <span data-i18n="products.discount">خصم</span></span>
+                <span class="discount-badge p-1"
+                  >15% <span data-i18n="products.discount">خصم</span></span
+                >
+                <span class="out-of-stock-badge">نفذت الكمية</span>
                 <span class="favorite-icon"
                   ><i class="fa-regular fa-heart"></i
                 ></span>
@@ -381,8 +462,12 @@
                 </div>
 
                 <div class="prices">
-                  <span class="final-price">22 <span data-i18n="products.currency">جنيه</span></span>
-                  <del class="original-price">26 <span data-i18n="products.currency">جنيه</span></del>
+                  <span class="final-price"
+                    >22 <span data-i18n="products.currency">جنيه</span></span
+                  >
+                  <del class="original-price"
+                    >26 <span data-i18n="products.currency">جنيه</span></del
+                  >
                 </div>
 
                 <div class="rating">
@@ -394,7 +479,7 @@
                 </div>
 
                 <button
-                data-i18n="products.add_to_cart"
+                  data-i18n="products.add_to_cart"
                   class="add-to-cart-btn"
                   data-id="103"
                   data-name="عدس أصفر"
@@ -670,11 +755,10 @@
                   أضف إلى السلة
                 </button>
               </div>
-
             </div>
           </div>
         </div>
-        
+
         <div class="btn-box">
           <a href="" data-i18n="products.view_more"> View More </a>
         </div>
@@ -693,12 +777,19 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-md-5 modal-image-col">
-             <div class="main-image-wrapper mb-3">
-    <img id="modal-product-image" src="" alt="صورة المنتج" class="img-fluid main-modal-img" />
-  </div>
-  
-  <div id="modal-product-gallery" class="modal-thumbnails d-flex gap-2 flex-wrap">
-    </div>
+              <div class="main-image-wrapper mb-3">
+                <img
+                  id="modal-product-image"
+                  src=""
+                  alt="صورة المنتج"
+                  class="img-fluid main-modal-img"
+                />
+              </div>
+
+              <div
+                id="modal-product-gallery"
+                class="modal-thumbnails d-flex gap-2 flex-wrap"
+              ></div>
             </div>
 
             <div class="col-md-7 modal-details-col">
@@ -711,6 +802,10 @@
                 <span id="modal-product-brand" class="meta-badge brand-badge"
                   >ماركة</span
                 >
+                <span
+                  id="modal-product-unit"
+                  class="meta-badge unit-badge"
+                ></span>
               </div>
 
               <h2 id="modal-product-name">اسم المنتج</h2>

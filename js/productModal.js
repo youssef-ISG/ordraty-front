@@ -1,233 +1,239 @@
-function closeProductModal() {
-    $('#product-modal-overlay').removeClass('show');
-    $('body').removeClass('modal-open');
-}
-
-function updateModalPrice(price, oldPrice) {
-    $('#modal-product-final-price').text(`${parseFloat(price).toFixed(2)} جنيه`);
-    $('#modal-btn-price').text(`${parseFloat(price).toFixed(2)} جنيه`);
-
-    if (oldPrice && oldPrice > 0) {
-        $('#modal-product-original-price').text(`${parseFloat(oldPrice).toFixed(2)} جنيه`).show();
-    } else {
-        $('#modal-product-original-price').hide();
-    }
-}
-
-function changeImage(element) {
-    document.getElementById('mainProductImg').src = element.src;
-    $('.thumb-item').removeClass('active');
-    $(element).parent().addClass('active');
-}
-
-function selectVariant(element) {
-    $('.variant-pill').removeClass('active');
-    $(element).addClass('active');
-    
-    const price = element.getAttribute('data-price');
-    const oldPrice = element.getAttribute('data-old');
-    
-    document.getElementById('display-price').innerText = price + ' جنيه';
-    if(oldPrice) {
-        document.getElementById('display-old-price').innerText = oldPrice + ' جنيه';
-        document.getElementById('display-old-price').style.display = 'inline-block';
-    } else {
-        document.getElementById('display-old-price').style.display = 'none';
-    }
-}
-
-function updateQty(change) {
-    const input = document.getElementById('product-qty');
-    let val = parseInt(input.value);
-    if (change === 1) val++;
-    else if (val > 1) val--;
-    input.value = val;
-}
 $(document).ready(function () {
+
     let currentProductData = {};
 
-    // 1. وظيفة فتح المودال وتعبئة البيانات
+    updateCartCount();
+
+    // =========================================================
+    // PRODUCT MODAL LOGIC
+    // =========================================================
+
+    // 1. Open Modal & Initialize Data
     $(document).on('click', '.product-card .image-wrapper, .product-card .add-to-cart-btn', function (e) {
         e.preventDefault();
         e.stopPropagation();
 
-        const card = $(this).closest('.product-card');
-        const btnData = card.find('.add-to-cart-btn');
+        if ($(this).closest('.product-card').hasClass('out-of-stock')) return;
 
-        // سحب البيانات من الـ Card
+        const btnData = $(this).closest('.product-card').find('.add-to-cart-btn');
+
         const baseId = btnData.data('id');
         const baseName = btnData.data('name');
         const basePrice = parseFloat(btnData.data('price'));
-        const imageSrc = btnData.data('image');
-        const category = btnData.data('category') || 'عام';
-        const brand = btnData.data('brand') || 'غير محدد';
-        const description = btnData.data('description') || 'تفاصيل المنتج غير متوفرة حالياً.';
-        const galleryData = btnData.data('gallery') || ""; 
+        const category = btnData.data('category');
+        const brand = btnData.data('brand');
+        const baseDesc = btnData.data('description') || 'لا يوجد وصف متاح.';
+        const baseUnit = btnData.data('unit') || ''; 
         
-        // معالجة الفارينتس (JSON)
-        let variants = btnData.data('variants');
-        if (typeof variants === 'string') {
-            try { variants = JSON.parse(variants); } catch(err) { variants = null; }
+        let defaultGallery = [];
+        const galleryAttr = btnData.data('gallery');
+        if (galleryAttr) {
+            defaultGallery = galleryAttr.split(',');
+        } else {
+            defaultGallery = [btnData.data('image')]; 
         }
 
-        // تهيئة بيانات المنتج الحالي
-        currentProductData = {
-            id: baseId,
-            name: baseName,
-            price: basePrice,
-            image: imageSrc,
-            quantity: 1,
-            notes: '',
-            hasVariants: false
-        };
+        let variants = null;
+        try {
+            variants = btnData.data('variants');
+            if (typeof variants === 'string') variants = JSON.parse(variants);
+        } catch (err) {
+            variants = null;
+        }
 
-        // ملء العناصر النصية
-        $('#modal-product-image').attr('src', imageSrc);
-        $('#modal-product-name').text(baseName);
+        // Set Initial Static Data
         $('#modal-product-category').text(category);
         $('#modal-product-brand').text(brand);
-        $('#modal-product-description').text(description);
         $('#modal-quantity-input').val(1);
         $('#modal-product-notes').val('');
 
-        // نقل التقييم (النجوم)
-        if(card.find('.rating').length > 0){
-             $('#modal-product-rating').html(card.find('.rating').html());
+        // Set Initial Unit
+        if(baseUnit) {
+            $('#modal-product-unit').text(baseUnit).show();
+        } else {
+            $('#modal-product-unit').hide();
         }
 
-        // --- بناء معرض الصور (Gallery) ---
-        const galleryContainer = $('#modal-product-gallery');
-        galleryContainer.empty();
-        let allImages = [imageSrc];
-        if (galleryData) {
-            allImages = allImages.concat(galleryData.split(','));
-        }
-        allImages.forEach((img, index) => {
-            const isActive = index === 0 ? 'active' : '';
-            galleryContainer.append(`
-                <div class="thumb-item ${isActive}" data-src="${img}">
-                    <img src="${img}" alt="thumbnail" />
-                </div>
-            `);
-        });
-
-        // --- بناء الفارينتس ---
         const variantsContainer = $('#modal-variants-container');
         const variantsSection = $('#modal-variants-section');
-        variantsContainer.empty(); 
+        variantsContainer.empty();
 
         if (variants && variants.length > 0) {
-            currentProductData.hasVariants = true;
             variantsSection.show();
+            currentProductData.hasVariants = true;
 
             variants.forEach((variant, index) => {
                 const isSelected = index === 0 ? 'selected' : '';
+                
+                const vImages = (variant.images && variant.images.length > 0) ? variant.images : defaultGallery;
+                const vDesc = variant.description || baseDesc;
+                const vTitle = variant.full_title || baseName + ' ' + variant.name;
+                const vUnit = variant.unit || baseUnit; // Get Variant Unit
+
                 const variantHtml = `
                     <div class="variant-option-card ${isSelected}" 
                          data-v-id="${variant.id}" 
-                         data-v-name="${variant.name}" 
+                         data-v-name="${vTitle}" 
                          data-v-price="${variant.price}"
-                         data-v-old-price="${variant.old_price || ''}">
+                         data-v-old-price="${variant.old_price || ''}"
+                         data-v-desc="${vDesc}"
+                         data-v-unit="${vUnit}"
+                         data-v-gallery='${JSON.stringify(vImages)}'>
+                         
                          <div class="variant-radio"></div>
                          <div class="variant-info">
                             <span class="variant-name">${variant.name}</span>
                          </div>
-                         <div class="variant-price-tag">${variant.price} جنيه</div>
+                         <div class="variant-price-tag">${variant.price} ج.م</div>
                     </div>
                 `;
                 variantsContainer.append(variantHtml);
 
                 if (index === 0) {
-                    updateModalPrice(variant.price, variant.old_price);
-                    currentProductData.id = variant.id; 
-                    currentProductData.variantName = variant.name; 
-                    currentProductData.price = variant.price;
+                    updateModalFullContent(vTitle, variant.price, variant.old_price, vDesc, vImages, vUnit);
+                    currentProductData = {
+                        id: variant.id,
+                        name: vTitle,
+                        price: variant.price,
+                        image: vImages[0],
+                        quantity: 1,
+                        hasVariants: true
+                    };
                 }
             });
+
         } else {
-            currentProductData.hasVariants = false;
             variantsSection.hide();
-            let oldPriceText = card.find('.original-price').text().replace('جنيه', '').trim();
-            updateModalPrice(basePrice, oldPriceText);
+            let oldPriceText = $(this).closest('.product-card').find('.original-price').text().replace(/[^0-9.]/g, '');
+            
+            updateModalFullContent(baseName, basePrice, oldPriceText, baseDesc, defaultGallery, baseUnit);
+            
+            currentProductData = {
+                id: baseId,
+                name: baseName,
+                price: basePrice,
+                image: defaultGallery[0],
+                quantity: 1,
+                hasVariants: false
+            };
         }
 
-        // إظهار المودال
         $('#product-modal-overlay').addClass('show');
         $('body').addClass('modal-open');
     });
 
-    $(document).on('click', '.thumb-item', function() {
-        const newSrc = $(this).data('src');
-        $('#modal-product-image').fadeOut(200, function() {
-            $(this).attr('src', newSrc).fadeIn(200);
-        });
-        $('.thumb-item').removeClass('active');
-        $(this).addClass('active');
-    });
-
-    // 3. اختيار الفارينت
-    $(document).on('click', '.variant-option-card', function() {
+    // 2. Select Variant
+    $(document).on('click', '.variant-option-card', function () {
         $('.variant-option-card').removeClass('selected');
         $(this).addClass('selected');
 
         const newId = $(this).data('v-id');
+        const newName = $(this).data('v-name');
         const newPrice = parseFloat($(this).data('v-price'));
         const oldPrice = $(this).data('v-old-price');
-        const variantName = $(this).data('v-name');
+        const newDesc = $(this).data('v-desc');
+        const newUnit = $(this).data('v-unit'); // Get Unit from Variant
+        
+        let newGallery = $(this).data('v-gallery');
+        if (typeof newGallery === 'string') {
+             try { newGallery = JSON.parse(newGallery); } catch(e) { newGallery = [newGallery]; }
+        }
+
+        updateModalFullContent(newName, newPrice, oldPrice, newDesc, newGallery, newUnit);
 
         currentProductData.id = newId;
+        currentProductData.name = newName;
         currentProductData.price = newPrice;
-        currentProductData.variantName = variantName;
-
-        updateModalPrice(newPrice, oldPrice);
+        currentProductData.image = newGallery[0];
     });
 
-    // 4. التحكم في الكمية
-    $('.qty-btn').on('click', function() {
+    // Helper: Update Modal Content
+    function updateModalFullContent(name, price, oldPrice, desc, imagesArray, unit) {
+        $('#modal-product-name').text(name);
+        $('#modal-product-description').text(desc);
+        $('#modal-product-final-price').text(parseFloat(price).toFixed(2) + ' جنيه');
+
+        if (oldPrice && parseFloat(oldPrice) > parseFloat(price)) {
+            $('#modal-product-original-price').text(parseFloat(oldPrice).toFixed(2) + ' جنيه').show();
+        } else {
+            $('#modal-product-original-price').hide();
+        }
+
+        // Update Unit Badge
+        if(unit) {
+            $('#modal-product-unit').text(unit).show();
+        } else {
+            $('#modal-product-unit').hide();
+        }
+
+        const mainImg = $('#modal-product-image');
+        const firstImage = (imagesArray && imagesArray.length > 0) ? imagesArray[0] : mainImg.attr('src');
+        
+        if (mainImg.attr('src') !== firstImage) {
+            mainImg.fadeOut(150, function () {
+                $(this).attr('src', firstImage).fadeIn(150);
+            });
+        }
+
+        const galleryContainer = $('#modal-product-gallery');
+        galleryContainer.empty();
+
+        if (imagesArray && imagesArray.length > 0) {
+            imagesArray.forEach((imgSrc, index) => {
+                const activeClass = index === 0 ? 'active' : '';
+                galleryContainer.append(`
+                    <div class="thumb-item ${activeClass}" data-src="${imgSrc}">
+                        <img src="${imgSrc}" alt="thumb">
+                    </div>
+                `);
+            });
+        }
+    }
+
+    // 3. Gallery Thumbnail Click
+    $(document).on('click', '.thumb-item', function () {
+        const src = $(this).data('src');
+        $('#modal-product-image').attr('src', src);
+        $('.thumb-item').removeClass('active');
+        $(this).addClass('active');
+    });
+
+    // 4. Quantity Logic
+    $('.qty-btn').on('click', function () {
         const input = $('#modal-quantity-input');
         let val = parseInt(input.val());
-        if ($(this).hasClass('plus')) { val++; } 
-        else { if (val > 1) val--; }
+        
+        if ($(this).hasClass('plus')) {
+            val++;
+        } else {
+            if (val > 1) val--;
+        }
+        
         input.val(val);
         currentProductData.quantity = val;
     });
 
-    // 5. وظيفة تحديث السعر
-    function updateModalPrice(price, oldPrice) {
-        $('#modal-product-final-price').text(price + ' جنيه');
-        if (oldPrice) {
-            $('#modal-product-original-price').text(oldPrice + ' جنيه').show();
-        } else {
-            $('#modal-product-original-price').hide();
-        }
-    }
-
+    // 5. Add To Cart From Modal
     $('#modal-add-to-cart-btn').on('click', function () {
         let cart = getCart();
-
         const qty = parseInt($('#modal-quantity-input').val());
         const notes = $('#modal-product-notes').val().trim();
-        
-        let finalName = currentProductData.name;
-        if (currentProductData.hasVariants && currentProductData.variantName) {
-            finalName = `${currentProductData.name} (${currentProductData.variantName})`;
-        }
 
         const productToAdd = {
-            id: currentProductData.id, 
-            name: finalName,
+            id: currentProductData.id,
+            name: currentProductData.name,
             price: currentProductData.price,
             image: currentProductData.image,
             quantity: qty,
             notes: notes
         };
 
-        const existingProduct = cart.find(p => p.id == productToAdd.id);
-
-        if (existingProduct) {
-            existingProduct.quantity += qty;
+        const existingIndex = cart.findIndex(p => p.id == productToAdd.id);
+        
+        if (existingIndex > -1) {
+            cart[existingIndex].quantity += qty;
             if (notes) {
-                existingProduct.notes = (existingProduct.notes ? existingProduct.notes + " | " : "") + notes;
+                cart[existingIndex].notes = (cart[existingIndex].notes ? cart[existingIndex].notes + " | " : "") + notes;
             }
         } else {
             cart.push(productToAdd);
@@ -235,13 +241,37 @@ $(document).ready(function () {
 
         saveCart(cart);
         updateCartCount();
-        showCartPopup();
-        renderCartPopup();
-        closeProductModal();
+        
+        if (typeof renderCartPopup === "function") renderCartPopup();
+        
+        $('#product-modal-overlay').removeClass('show');
+        $('body').removeClass('modal-open');
+        $('#cart-popup').fadeIn();
     });
 
+    // Close Modal
     $('.modal-close-btn, #product-modal-overlay').on('click', function (e) {
-        if (e.target === this) closeProductModal();
+        if (e.target === this || $(this).hasClass('modal-close-btn')) {
+            $('#product-modal-overlay').removeClass('show');
+            $('body').removeClass('modal-open');
+        }
     });
-});
 
+    // =========================================================
+    // CART HELPER FUNCTIONS
+    // =========================================================
+
+    function getCart() {
+        return JSON.parse(localStorage.getItem('cart')) || [];
+    }
+
+    function saveCart(cart) {
+        localStorage.setItem('cart', JSON.stringify(cart));
+    }
+
+    function updateCartCount() {
+        const cart = getCart();
+        const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+        $('#cart-count').text(count);
+    }
+});

@@ -1,0 +1,426 @@
+/* ==================================================
+   ملف تنسيق صفحة تفاصيل المنتج (Product Details CSS)
+   الألوان الأساسية: كحلي (#112D4E) - أحمر (#DB2D2E)
+   ================================================== */
+
+/* 1. متغيرات الألوان والإعدادات العامة */
+:root {
+  --main-navy: #112D4E;
+  --main-red: #DB2D2E;
+  --light-bg: #fffbf0;
+  --border-color: #eee;
+  --text-color: #333;
+  --gray-text: #666;
+}
+
+.product_details_section {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: #fff;
+}
+
+/* 2. مسار التنقل (Breadcrumb) */
+.custom-breadcrumb {
+  background: transparent;
+  padding: 0;
+  margin-bottom: 30px;
+  font-size: 0.95rem;
+}
+
+.custom-breadcrumb .breadcrumb-item a {
+  color: #999;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.custom-breadcrumb .breadcrumb-item a:hover {
+  color: var(--main-navy);
+}
+
+.custom-breadcrumb .breadcrumb-item.active {
+  color: var(--main-navy);
+  font-weight: 700;
+}
+
+/* 3. معرض الصور (Image Gallery) */
+.product-gallery {
+  position: sticky;
+  top: 20px;
+}
+
+.main-image-box {
+  background: #fff;
+  border: 1px solid var(--border-color);
+  border-radius: 15px;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px; /* ارتفاع ثابت لتوحيد الشكل */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+}
+
+.main-image-box img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  transition: transform 0.5s ease;
+}
+
+.main-image-box:hover img {
+  transform: scale(1.1); /* تأثير الزووم عند المرور */
+}
+
+/* شارة الخصم */
+.badge-offer {
+  position: absolute;
+  top: 15px;
+  right: 15px; /* يمين للغة العربية */
+  background-color: var(--main-red);
+  color: #fff;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.85rem;
+  z-index: 2;
+  box-shadow: 0 2px 5px rgba(219, 45, 46, 0.3);
+}
+
+/* أيقونة العدسة */
+.zoom-icon {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  background: rgba(255, 255, 255, 0.9);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--main-navy);
+  pointer-events: none; /* أيقونة جمالية فقط */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* قائمة الصور المصغرة */
+.thumbnails-list {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.thumb-item {
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  padding: 5px;
+  cursor: pointer;
+  background: #fff;
+  transition: all 0.3s ease;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.thumb-item img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 5px;
+}
+
+.thumb-item.active,
+.thumb-item:hover {
+  border-color: var(--main-navy);
+  transform: translateY(-2px);
+}
+
+/* 4. تفاصيل ومعلومات المنتج (Product Info) */
+.product-info-content {
+  padding-right: 20px; /* مسافة للشاشات الكبيرة */
+}
+
+.brand-tag {
+  background: #f4f6f9;
+  color: var(--main-navy);
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.rating i {
+  font-size: 0.9rem;
+}
+
+.product-title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--main-navy);
+  margin-top: 10px;
+  margin-bottom: 15px;
+  line-height: 1.4;
+}
+
+.product-price-area {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.current-price {
+  color: var(--main-red);
+  font-weight: 800;
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.old-price {
+  color: #999;
+  font-size: 1.2rem;
+  text-decoration: line-through;
+}
+
+.product-short-desc {
+  color: var(--gray-text);
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+/* 5. خيارات المنتج (Variants - Weight) */
+.option-label {
+  font-weight: 700;
+  color: var(--main-navy);
+  margin-bottom: 10px;
+}
+
+.variant-pills {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.variant-pill {
+  cursor: pointer;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  padding: 8px 20px;
+  background: #fff;
+  transition: all 0.3s ease;
+  position: relative;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 0;
+}
+
+.variant-pill input {
+  display: none; /* إخفاء زر الراديو الأصلي */
+}
+
+.variant-pill:hover {
+  border-color: var(--main-navy);
+}
+
+.variant-pill.active {
+  border-color: var(--main-navy);
+  background-color: var(--main-navy);
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(17, 45, 78, 0.2);
+}
+
+/* 6. أزرار الشراء والكمية (Actions) */
+.action-buttons-row {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.quantity-box {
+  display: flex;
+  align-items: center;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+  height: 50px;
+}
+
+.qty-btn {
+  border: none;
+  background: #fff;
+  width: 40px;
+  height: 100%;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: var(--main-navy);
+  transition: 0.2s;
+}
+
+.qty-btn:hover {
+  background: #f8f9fa;
+}
+
+.quantity-box input {
+  width: 50px;
+  text-align: center;
+  border: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #333;
+  /* إزالة أسهم الرقم */
+  -moz-appearance: textfield;
+}
+.quantity-box input::-webkit-outer-spin-button,
+.quantity-box input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* زر الإضافة للسلة */
+.add-cart-btn-large {
+  flex-grow: 1; /* يأخذ المساحة المتبقية */
+  background-color: var(--main-navy);
+  color: #fff;
+  border: none;
+  padding: 0 30px;
+  height: 50px; /* نفس ارتفاع صندوق الكمية */
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-cart-btn-large:hover {
+  background-color: var(--main-red);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(219, 45, 46, 0.3);
+}
+
+/* زر المفضلة */
+.wishlist-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  border: 2px solid var(--border-color);
+  background: #fff;
+  color: var(--gray-text);
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.wishlist-btn:hover {
+  background-color: #fff5f5;
+  color: var(--main-red);
+  border-color: var(--main-red);
+}
+
+/* 7. بيانات إضافية (Meta Info) */
+.extra-meta {
+  display: flex;
+  gap: 25px;
+  border-top: 1px solid var(--border-color);
+  padding-top: 25px;
+  margin-top: 25px;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.meta-item i {
+  color: var(--main-navy);
+  font-size: 1.2rem;
+}
+
+.meta-item span {
+  font-size: 0.9rem;
+  color: var(--gray-text);
+  font-weight: 600;
+}
+
+/* 8. التبويبات (Tabs) */
+.product-tabs-container {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.nav-tabs {
+  border-bottom: 2px solid #eee;
+}
+
+.nav-tabs .nav-link {
+  color: var(--gray-text);
+  font-weight: 700;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.05rem;
+  background: transparent;
+  border-bottom: 3px solid transparent;
+  transition: 0.3s;
+}
+
+.nav-tabs .nav-link:hover {
+  color: var(--main-navy);
+}
+
+.nav-tabs .nav-link.active {
+  color: var(--main-navy);
+  background: transparent;
+  border-bottom-color: var(--main-navy);
+}
+
+.tab-content {
+  line-height: 1.8;
+  color: var(--gray-text);
+  padding: 30px !important;
+  background: #fff;
+  border: 1px solid #eee;
+  border-top: none;
+  border-radius: 0 0 10px 10px;
+}
+
+/* 9. التجاوب (Responsive) */
+@media (max-width: 991px) {
+  .product-info-content {
+    padding-right: 0;
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 576px) {
+  .product-title {
+    font-size: 1.5rem;
+  }
+  
+  .action-buttons-row {
+    gap: 10px;
+  }
+  
+  .add-cart-btn-large {
+    width: 100%;
+    order: 3; 
+    margin-top: 10px;
+  }
+  
+  .quantity-box, .wishlist-btn {
+    flex: 1;
+    justify-content: center;
+  }
+}
