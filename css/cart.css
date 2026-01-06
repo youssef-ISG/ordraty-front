@@ -169,3 +169,78 @@
     .product-details { flex-direction: row; }
     .cart-page-actions { flex-direction: column; gap: 15px; }
 }
+
+/* --- قسم الكوبون الإبداعي --- */
+.coupon-section {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: flex-start; /* يتبع اتجاه الصفحة */
+}
+
+.coupon-container {
+    display: flex;
+    gap: 10px;
+    background: #fff;
+    padding: 8px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+    border: 1px solid #f1f5f9;
+    width: 100%;
+    max-width: 450px; /* تحديد عرض مناسب */
+}
+
+#coupon-code {
+    flex: 1;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 10px;
+    background: #f8fafc;
+    font-weight: 600;
+    color: #112D4E;
+    outline: none;
+    transition: 0.3s;
+}
+
+#coupon-code:focus {
+    background: #fff;
+    box-shadow: inset 0 0 0 2px rgba(219, 45, 46, 0.1);
+}
+
+.apply-btn {
+    background-color: #112D4E;
+    color: #fff;
+    padding: 10px 25px;
+    border-radius: 10px;
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+    white-space: nowrap;
+}
+
+.apply-btn:hover {
+    background-color: #DB2D2E;
+    transform: translateY(-2px);
+}
+
+.coupon-msg {
+    margin-top: 10px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: none;
+}
+
+.coupon-msg.success { color: #10b981; display: block; }
+.coupon-msg.error { color: #ef4444; display: block; }
+
+[dir="rtl"] .coupon-section { justify-content: flex-start; }
+[dir="ltr"] .coupon-section { justify-content: flex-start; }
+
+@media (max-width: 768px) {
+    .coupon-container {
+        max-width: 100%;
+    }
+    .coupon-section {
+        padding: 0 10px;
+    }
+}

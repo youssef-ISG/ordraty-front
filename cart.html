@@ -242,6 +242,14 @@
               0.00 <span data-i18n="cart.currency">جنيه</span>
             </td>
           </tr>
+          <tr id="discount-row" style="display: none">
+            <td colspan="3">
+              <strong data-i18n="cart.discount_label">الخصم (كوبون):</strong>
+            </td>
+            <td colspan="2" class="discount-value text-success">
+              -0.00 <span>جنيه</span>
+            </td>
+          </tr>
           <tr>
             <td colspan="3">
               <strong data-i18n="cart.total_label">الإجمالي النهائي:</strong>
@@ -252,6 +260,26 @@
           </tr>
         </tfoot>
       </table>
+
+      <div class="coupon-section">
+        <div class="coupon-container">
+          <input
+            type="text"
+            id="coupon-code"
+            data-i18n-ph="cart.coupon_placeholder"
+            placeholder="أدخل رمز الكوبون"
+          />
+          <button
+            id="apply-coupon"
+            class="btn apply-btn"
+            data-i18n="cart.apply_coupon"
+          >
+            تطبيق الكوبون
+          </button>
+        </div>
+        <!-- message for success or failed -->
+        <div id="coupon-message" class="coupon-msg"></div>
+      </div>
 
       <div class="cart-page-actions">
         <a
