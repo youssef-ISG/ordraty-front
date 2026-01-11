@@ -53,4 +53,45 @@ function renderCheckoutPage() {
             updateCartCount();
             window.location.href = "index.html";
         });
+
+        
     }
+
+    $(document).ready(function() {
+    // 1. التحكم في إظهار خيارات الدفع أونلاين
+    $('input[name="paymentMethod"]').on('change', function() {
+        const $onlineOptions = $('#online-options');
+        
+        if ($(this).val() === 'card') {
+            // إظهار الخيارات الفرعية بحركة انسيابية
+            $onlineOptions.slideDown(400);
+        } else {
+            // إخفاء الخيارات وتفريغ الحقول عند اختيار الدفع عند الاستلام
+            $onlineOptions.slideUp(300, function() {
+                $('.payment-detail-form').hide();
+                $('.sub-option').removeClass('active');
+            });
+        }
+    });
+
+    // 2. التحكم في تبديل (فوري / كارد)
+    $('.sub-option').on('click', function() {
+        // إضافة الكلاس النشط وتغيير الشكل
+        $('.sub-option').removeClass('active');
+        $(this).addClass('active');
+
+        // جلب الهدف وإظهار الفورم الخاص به بـ Fade effect
+        const target = '#' + $(this).data('target');
+        
+        $('.payment-detail-form').stop().fadeOut(200, function() {
+            $(target).fadeIn(300);
+        });
+    });
+
+    // 3. إضافة تفاعل (UX) عند كتابة رقم الكارد (تنسيق تلقائي)
+    $('.custom-input[placeholder*="****"]').on('input', function() {
+        let val = $(this).val().replace(/\D/g, '');
+        val = val.replace(/(.{4})/g, '$1 ').trim();
+        $(this).val(val.substring(0, 19));
+    });
+});

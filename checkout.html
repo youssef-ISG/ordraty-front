@@ -293,10 +293,10 @@
                   >
                 </div>
               </div>
-
               <div class="payment-method">
                 <h4 data-i18n="checkout.payment_title">اختر طريقة الدفع</h4>
-                <div class="custom-control custom-radio">
+
+                <div class="custom-control custom-radio payment-card">
                   <input
                     type="radio"
                     id="cod"
@@ -305,14 +305,13 @@
                     value="cod"
                     checked
                   />
-                  <label
-                    class="custom-control-label"
-                    for="cod"
-                    data-i18n="checkout.payment_cod"
-                    >الدفع عند الاستلام</label
-                  >
+                  <label class="custom-control-label w-100" for="cod">
+                    <i class="fas fa-money-bill-wave ml-2"></i> الدفع عند
+                    الاستلام
+                  </label>
                 </div>
-                <div class="custom-control custom-radio">
+
+                <div class="custom-control custom-radio payment-card">
                   <input
                     type="radio"
                     id="credit-card"
@@ -320,12 +319,94 @@
                     class="custom-control-input"
                     value="card"
                   />
-                  <label
-                    class="custom-control-label"
-                    for="credit-card"
-                    data-i18n="checkout.payment_online"
-                    >الدفع أونلاين</label
+                  <label class="custom-control-label w-100" for="credit-card">
+                    <i class="fas fa-credit-card ml-2"></i> الدفع أونلاين (بطاقة
+                    / فوري)
+                  </label>
+
+                  <div
+                    id="online-options"
+                    class="sub-payment-methods"
+                    style="display: none"
                   >
+                    <hr />
+                    <div class="d-flex gap-3 mb-3">
+                      <div class="sub-option" data-target="fawry-form">
+                        <img
+                          src="https://fawry.com/wp-content/uploads/2021/08/fawry-logo.png"
+                          alt="Fawry"
+                        />
+                        <span>فوري</span>
+                      </div>
+                      <div class="sub-option" data-target="card-form">
+                        <img
+                          src="https://cdn-icons-png.flaticon.com/512/349/349221.png"
+                          alt="Card"
+                        />
+                        <span>بطاقة بنكية</span>
+                      </div>
+                    </div>
+
+                    <div
+                      id="fawry-form"
+                      class="payment-detail-form"
+                      style="display: none"
+                    >
+                      <div class="form-group">
+                        <label>رقم الموبايل المرتبط بفوري</label>
+                        <input
+                          type="tel"
+                          class="form-control custom-input"
+                          placeholder="01xxxxxxxxx"
+                        />
+                      </div>
+                      <button class="btn-confirm-payment">
+                        تأكيد عبر فوري
+                      </button>
+                    </div>
+
+                    <div
+                      id="card-form"
+                      class="payment-detail-form"
+                      style="display: none"
+                    >
+                      <div class="form-group">
+                        <label>اسم صاحب الكارد</label>
+                        <input
+                          type="text"
+                          class="form-control custom-input"
+                          placeholder="Name on Card"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label>رقم الكارد</label>
+                        <input
+                          type="text"
+                          class="form-control custom-input"
+                          placeholder="**** **** **** ****"
+                        />
+                      </div>
+                      <div class="row">
+                        <div class="col-6">
+                          <input
+                            type="text"
+                            class="form-control custom-input"
+                            placeholder="MM/YY"
+                          />
+                        </div>
+                        <div class="col-6">
+                          <input
+                            type="text"
+                            class="form-control custom-input"
+                            placeholder="CVV"
+                          />
+                        </div>
+                      </div>
+                      <button class="btn-confirm-payment mt-3">
+                        تأكيد بيانات الكارد
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
 
