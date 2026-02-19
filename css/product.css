@@ -651,3 +651,23 @@ body.modal-open {
   color: #10b981; 
   border: 1px solid rgba(16, 185, 129, 0.2);
 }
+.variant-option-card.out-of-stock-variant {
+    opacity: 0.6;
+    background-color: #f9f9f9;
+    cursor: not-allowed;
+}
+
+.variant-option-card.out-of-stock-variant .variant-name {
+    text-decoration: line-through;
+    color: #999;
+}
+.disabled-btn {
+    background-color: #ccc !important;
+    color: #666 !important;
+    cursor: not-allowed !important;
+    box-shadow: none !important;
+    pointer-events: none;
+}
+.variant-option-card.out-of-stock-variant .variant-radio {
+    border-color: #ddd;
+}
