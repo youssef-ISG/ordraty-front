@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ar" dir="rtl">
   <head>
     <meta charset="UTF-8" />
@@ -226,6 +226,37 @@
               <input type="number" value="1" min="1" class="quantity-input" />
             </td>
             <td class="product-total">10.00 جنيه</td>
+            <td class="product-remove">
+              <button class="remove-btn">إزالة</button>
+            </td>
+          </tr>
+          <tr class="cart-item-template out-of-stock-row">
+            <td class="product-details">
+              <div class="product-info-wrapper">
+                <span class="out-of-stock-badge">نفد</span>
+                <img
+                  src="images/f1.png"
+                  alt="Product Image"
+                  class="grayscale-img"
+                />
+                <div>
+                  <p class="product-name">اسم المنتج المنتهي</p>
+                  <p class="stock-error-text">
+                    عذراً، هذا المنتج لم يعد متوفراً حالياً
+                  </p>
+                </div>
+              </div>
+            </td>
+            <td class="product-price text-muted">10.00 جنيه</td>
+            <td class="product-quantity">
+              <input
+                type="number"
+                value="1"
+                disabled
+                class="quantity-input disabled-input"
+              />
+            </td>
+            <td class="product-total text-muted">10.00 جنيه</td>
             <td class="product-remove">
               <button class="remove-btn">إزالة</button>
             </td>
